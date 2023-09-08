@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex06</title>
+    <script defer>
+        function verificar(){
+            if (temp.value < 10) {
+                screendiv.innerHTML = `<img src="https://static.preparaenem.com/conteudo/images/morango.jpg" alt="apropriada">`;
+            }
+            else{
+                screendiv.innerHTML = `<img src="https://thumbs.dreamstime.com/z/foto-de-morangos-podres-87744167.jpg?w=768" alt="inapropriada">`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>Temperatura do ambiente:</p>
+    <input type="text" id="temp">
+    <br>
+    <button onclick="verificar();">Verficar Clima</button>
+    <br>
+    <br>
+    <div id="screendiv"></div>
+</body>
+</html>

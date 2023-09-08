@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex02</title>
+
+    <script defer>
+        function calcRefris(){
+            var diabetes = '';
+            var latinhasPorAno = latinhasPorDia.value * 365;
+            if (latinhasPorAno >= 500){
+                diabetes = "<p>Cuidado com a diabetes!</p>";
+            }
+            screendiv.innerHTML = `Você consome ${latinhasPorAno} latinhas de refrigerante por ano. ${diabetes}`;
+        }
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Coloque a quantidade de latinhas de refrigerante consumidas por dia</p>
+    <input type="text" id="latinhasPorDia">
+    <br>
+    <br>
+    <button onclick="calcRefris();">Quantos refris?</button>
+    <br>
+    <br>
+
+    <div id="screendiv"></div>
+
+    <img src="ex02.jpg">
+</body>
+
+</html>

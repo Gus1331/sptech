@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex07</title>
+
+    <script defer>
+        function calcCorrida(){
+            var nome = nomePassageiro.value;
+            var distancia = distanciaLocal.value;
+            var bandeira = bandeiraCorrida.value;
+            var horario = horarioCorrida.value;
+            var valor = 1.25 * distancia;
+            var porcentagem1 = (5 * bandeira ) / 100; //  5 * 3 / 100 = 0.15
+            var porcentagem2;
+        
+
+            porcentagem2 = Number(1 + porcentagem2);    
+
+            if(horario > 6){ 
+                porcentagem2 = Number(1 + porcentagem1 * 2);
+            }
+            
+            if(horario > 13){ 
+                porcentagem2 = Number(1 + porcentagem1 * 3); // 1 + 0.15*3 (0.45)
+            }
+            
+            valor = valor * porcentagem2;
+            
+            screendiv.innerHTML = `Olá ${nome} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${valor}`;
+        }
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Nome do passageiro</p>
+    <input type="text" id="nomePassageiro">
+    <p>Distância do local atual até o destino em KM</p>
+    <input type="text" id="distanciaLocal">
+    <p>informação da bandeira da corrida (o valor deve ser apenas 1,2 ou 3)</p>
+    <input type="number" min="1" max="3" id="bandeiraCorrida">
+    <p>Horário da corrida (sistema 24h em inteiros)</p>
+    <input type="number" min="0" max="23" id="horarioCorrida">
+    <br>
+    <br>
+    <button onclick="calcCorrida();">Calcular Corrida</button>
+    <br>
+    <br>
+    <div id="screendiv"></div>
+    
+</body>
+
+</html>

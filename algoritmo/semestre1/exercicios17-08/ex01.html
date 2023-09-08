@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex01</title>
+</head>
+
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    Cidade natal <br>
+    <input type="text" id="cidadeNatal" placeholder="Cidade Natal">
+    <input type="date" id="dataNascimento" placeholder="ano de nascimento">
+    <button id="cadastrar" onclick="cadastrar();">Cadastrar</button>
+
+    <script defer>
+        function cadastrar() {
+            alert(`Você nasceu na cidade ${cidadeNatal.value} em ${dataNascimento.value} .`)
+        }
+    </script>
+
+</body>
+
+</html>

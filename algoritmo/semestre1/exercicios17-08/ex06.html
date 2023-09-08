@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex06</title>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <input type="text" id="valorPizza" placeholder="valor da pizza">
+    <br>
+    <input type="text" id="amgs" placeholder="Quantidade de amigos a dividir">
+    <br>
+    <button onclick="calc()">#lovePizza</button>
+
+    <script defer>
+        function calc() {
+            alert(`Cada um dos ${amgs.value} amigos irá pagar R$${(valorPizza.value / amgs.value)}`);
+        }
+    </script>
+    <style>
+        input {
+            width: 40em;
+        }
+    </style>
+</body>
+
+</html>

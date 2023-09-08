@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04</title>
+    <script defer>
+
+        function analisarFreq(){
+            if (freq.value < 50){
+                screendiv.innerHTML = `
+                <img src="https://img.freepik.com/vetores-premium/ilustracao-de-desenho-animado-de-turista-feminina-de-estilo-bonito_378588-158.jpg" alt="turista">
+                `;
+            }
+            else{
+                screendiv.innerHTML = `
+                <img src="https://alunoensina.com/svg/study.svg" alt="aluno">
+                `;
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Frequência do aluno</p>
+    <input type="text" id="freq">
+    <br>
+    <button onclick="analisarFreq();">Analisar Frequência</button>
+    <div id="screendiv"></div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex06</title>
+
+
+    <script defer>
+        function SSJ(){
+            screendiv.innerHTML = `Após se transformar em SSJ, o ki desse Sayajin passa a ser de ${ki.value * 50}`
+        }
+        function SSJ2(){
+            screendiv.innerHTML = `Após se transformar em SSJ2, o ki desse Sayajin passa a ser de ${ki.value * 100}`
+        }
+        function SSJ3(){
+            screendiv.innerHTML = `Após se transformar em SSJ3, o ki desse Sayajin passa a ser de ${ki.value * 200}`
+        }
+
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>        
+
+    <p>Ki base do guerreiro:</p>
+    <input type="text" id="ki">
+    <br>
+    <p>Transformar em:</p>
+    <button onclick="SSJ();">SSJ</button>
+    <button onclick="SSJ2();">SSJ2</button>
+    <button onclick="SSJ3();">SSJ3</button>
+    <br>
+    <br>
+
+    <div id="screendiv"></div>
+
+</body>
+
+</html>

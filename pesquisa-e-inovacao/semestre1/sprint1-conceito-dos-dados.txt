@@ -1,0 +1,40 @@
+REBER CONTAGEM:
+	Sensor 1: inicio da esteira (Produto Bruto)
+	Sensor 2: fim da esteira (Produto Final)
+
+
+-------------------------------------------------------------
+SENSOR 1 OBJETIVO:
+Captar a entrada do produto na forma bruta, assim calcular tempo de saida, gargalo e produtos aproveitados.
+
+-------------------------------------------------------------
+SENSOR 2 OBJETIVO:
+Captar a saida do produto na forma final (embalado), assim ajudar no calculo do tempo de saida, gargalo e produtos aproveitados. também calcular renda e lucros estimados, e calcular estoque.
+
+-------------------------------------------------------------
+FUNCIONAMENTO
+let S1 = sinal do sensor 1
+let S2 = sinal do sensor 2
+
+tempo de saida:
+	S2.(tempo do primeiro sinal) - S1.(tempo do primeiro sinal)= x
+
+gargalo e produtos não aproveitados:
+	S1.(sinais por minuto) - S2.(sinais por minuto) = gargalo ou itens defeituoso
+
+produtos gerados (configuravel para dia / mês):
+	input do usuario (tempo), valor dia / mês
+	(S2 * tempo.value)+ "/" + tempo
+
+renda estimada produzida (configuravel para dia / mês):
+	input do usuario (tempo), valor dia / mês
+	let PG = produtos gerados * tempo
+	PG * valor do produto
+
+	// o valor do produto deve ser um input ou valor vindo de API
+
+estoque:
+	
+
+
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula 17/08</title>
+</head>
+
+<body>
+
+    digite o 1o numero:
+    <input type="text" id="n1">
+    <br>
+
+    digite o 2o numero:
+    <input type="text" id="n2">
+    <br>
+
+    <button onclick="multiplicar()">Multiplicar</button>
+    <button onclick="dividir()">Dividir</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <button onclick="somar()">Somar</button>
+
+
+    <script defer>
+        function multiplicar() {
+            alert(`O resultado da multiplicação resultado entre ${n1.value} e ${n2.value} é ${n1.value * n2.value}`);
+        }
+        function dividir() {
+            alert(`O resultado da divisão resultado entre ${n1.value} e ${n2.value} é ${n1.value / n2.value}`);
+        }
+        function subtrair() {
+            alert(`O resultado da subtração resultado entre ${n1.value} e ${n2.value} é ${n1.value - n2.value}`);
+        }
+        function somar() {
+            alert(`O resultado da soma resultado entre ${n1.value} e ${n2.value} é ${ Number(n1.value) + Number(n2.value) }`);
+        }
+
+    </script>
+</body>
+
+</html>

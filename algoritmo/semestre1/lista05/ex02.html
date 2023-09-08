@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02</title>
+    <script defer>
+        function analisarConta(){
+            saldo = saldoConta.value - debitoConta.value;
+
+            if (saldo >= 0){
+                screendiv.innerHTML = `<p class="pos">o saldo atual da conta corrente é R$${saldo}</p>`;
+            }
+            else{
+                screendiv.innerHTML = `<p class="neg">o saldo atual da conta corrente é R$${saldo}</p>`;
+            }
+        }
+    </script>
+    <style>
+        .neg{
+            font-weight: bold;
+            color: red;
+        }
+        .pos{
+            font-style: italic;
+            color: blue ;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Saldo da conta:</p>
+    <input type="text" id="saldoConta">
+    <p>Valor do débito:</p>
+    <input type="text" id="debitoConta">
+    <br>
+    <button onclick="analisarConta();">Analisar conta</button>
+    <br>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+</html>

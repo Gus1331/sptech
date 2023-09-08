@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex05</title>
+    <script defer>
+        function verificar(){
+            var n1 = nota1.value;
+            var n2 = nota2.value;
+            var media = ( n1 + n2 ) / 2;
+            if(media >= 6) {
+                screendiv.innerHTML = `Parabéns, aprovado!`;
+            }
+            else{
+                screendiv.innerHTML = `Tente outra vez...`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Nota 1:</p>
+    <input type="text" id="nota1">
+    <p>Nota 2:</p>
+    <input type="text" id="nota2">
+    <br>
+    <button onclick="verificar();">Verificar a situação</button>
+    <br>
+    <br>
+    <div id="screendiv"></div>
+    
+</body>
+</html>

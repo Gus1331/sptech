@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex04</title>
+
+    <script defer>
+        function calcPizza(){
+            var valorAmigos = valorPizza.value / qtdAmigos.value;
+            var caro = "";
+            if (valorAmigos > 20){
+                caro = "<p>Deu ruim! Pizza muito cara!</p>";
+            }
+
+            screendiv.innerHTML = `Cada amigo vai pagar R$${valorAmigos} pela pizza${caro}`;
+        }
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Qual o valor da pizza</p>
+    <input type="text"  id="valorPizza">
+    <br>
+    <p>Qual a quantidade de amigos</p>
+    <input type="text" id="qtdAmigos">
+    <br>
+    <br>
+    <button onclick="calcPizza();">Rola a pizza?</button>
+    <br>
+    <br>
+    <div id="screendiv"></div>
+</body>
+
+</html>

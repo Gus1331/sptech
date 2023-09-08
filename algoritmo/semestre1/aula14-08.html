@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula 14/08</title>
+</head>
+
+<body>
+    <p>Olá digite seu nome</p>
+    <input type="text" id="nome_usuario">
+    <hr>
+    <p>Olá digite sua idade </p>
+    <input type="text" id="idade_usuario">
+    <button onclick="cumprimentarCompleto()"> Clique em Mim</button>
+
+    <script defer>
+        function cumprimentar() {
+            alert("Hello");
+        }
+        function MostrarNoConsole() {
+            console.log("Hello");
+        }
+        function cumprimentarCompleto() {
+            alert("Hello " + nome_usuario.value + ", Age: " + idade_usuario.value + ", Welcome!")
+        }
+    </script>
+
+</body>
+
+</html>

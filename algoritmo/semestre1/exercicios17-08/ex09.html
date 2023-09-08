@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex09</title>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <input type="text" id="notaC" placeholder="Nota continuada">
+    <br>
+    <input type="text" id="notaS" placeholder="Nota semestral">
+    <br>
+    <input type="text" id="nome" placeholder="Nome do aluno">
+    <br>
+
+    <button onclick="calc();">Calcular média</button>
+
+
+    <script defer>
+        function calc() {
+            var result = (notaC.value * 0.6) + (notaS.value * 0.4);
+            alert(`A média do aluno(a) ${nome.value} será: ${result}`);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex04</title>
+
+
+    <script defer>
+        function calc(){
+            screendiv.innerHTML = `Cada amigo vai colaborar com R$${(Number(value.value) + (Number(value.value * 0.1))) / amgs.value} para a pizza de ${flavor.value}.`;    
+        }
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>insira o sabor da pizza</p>
+    <input type="text" id="flavor">
+    <br>
+    <p>insira o valor da pizza</p>
+    <input type="text" id="value">
+    <br>
+    <p>Quantidade de amigos</p>
+    <input type="text" id="amgs">
+    <br>
+    <br>
+    <button onclick="calc();">Ver valor por amigo</button>
+    <br>
+    <br>
+
+    <div id="screendiv"></div>
+
+</body>
+
+</html>

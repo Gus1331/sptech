@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex07</title>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Qual o valor da sua passagem??</p>
+    <br>
+    <input type="text" id="valorPassagem">
+    <br>
+
+    <br>
+
+    <p>Quantas viagens você fará por mês??</p>
+    <br>
+    <input type="text" id="viagensMes">
+    <br>
+
+    <br>
+
+    <button onclick="calc();">Ver Economia</button>
+
+    <script defer>
+        function calc(){
+            var full = valorPassagem.value * viagensMes.value;
+            var saved = (valorPassagem.value / 2) * viagensMes.value;
+            alert(`Você economizará R$${full - saved} por mês.`);
+        }
+    </script>
+
+</body>
+
+</html>

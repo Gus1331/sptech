@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex02</title>
+
+
+    <script defer>
+
+        function calcResultado() {
+            var votosa = Number(eleicaoA.value);
+            var votosb = Number(eleicaoB.value);
+            var votosc = Number(brancos.value);
+            var votosd = Number(nulos.value);
+            var votost = votosa+votosb+votosc+votosd;
+            screendiv.innerHTML = `
+            Total de votos: ${votost}
+            Candidato A: ${(votosa * 100) / votost}% (${votosa} votos)
+            Candidato B: ${(votosb * 100) / votost}% (${(votosb)} votos)
+            Inválidos: ${((votosc + votosd) * 100) / votost}% (${votosc+votosd} votos)`;
+        }
+
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Insira a quantidade de votos:</p>
+
+    <p>Eleiçoes A </p>
+    <input type="text" id="eleicaoA">
+    <br>
+    <p>Eleiçoes B </p>
+    <input type="text" id="eleicaoB">
+    <br>
+    <p>Votos em branco </p>
+    <input type="text" id="brancos">
+    <br>
+    <p>Votos nulos </p>
+    <input type="text" id="nulos">
+    <br>
+    <br>
+    <button onclick="calcResultado();">Resultado da Eleição</button>
+    <br>
+    <br>
+
+    <div id="screendiv">...</div>
+
+</body>
+
+</html>

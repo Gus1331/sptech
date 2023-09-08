@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex07</title>
+
+
+    <script defer>
+        function calc(){
+            var imc = peso.value  / (altura.value * altura.value);
+            screendiv.innerHTML = `Seu IMC é: ${imc}`;
+        }
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Seu peso:</p>
+    <input type="text" id="peso">
+    <p>Sua altura:</p>
+    <input type="text" id="altura">
+    <br>
+    <br>    
+    <button onclick="calc();">Calcular IMC</button>
+    <br>
+    <br>
+
+    <div id="screendiv"></div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex03</title>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <input type="text" id="time" placeholder="Nome do seu time">
+    <br>
+    <input type="text" id="achiv" placeholder="Quantidade de mundiais de clube" >
+    <br>
+    <button onclick="responder();">Amo meu time</button>
+
+    <script defer>
+        function responder(){
+            alert(`O time ${time.value} tem ${achiv.value} mundiais da FIFA`);
+        }
+    </script>
+
+<style> 
+    input{
+        width: 29em;
+    }
+</style>
+</body>
+
+</html>

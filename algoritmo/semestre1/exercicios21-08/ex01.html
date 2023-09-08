@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex01</title>
+
+
+    <script defer>
+        function calcSono() {
+            var hrs = horas.value
+            screendiv.innerHTML = `
+            Ao dormir <u>${horas.value}</u> horas, você dormiu:
+            <p><u>${hrs * 0.05}</u> horas na fase 1</p><br>
+            <p><u>${hrs * 0.45}</u> horas na <b>fase 2</b></p><br>
+            <p><u>${hrs * 0.30}</u> horas na <b>fase 3</b></p><br>
+            <p><u>${hrs * 0.20}</u> horas na <b>fase REM</b></p><br>
+            `;
+        }
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Insira suas Horas dormidas</p>
+    <br>
+    <input type="number" id="horas">
+    <br>
+    <br>
+    <button onclick="calcSono();">Calcular Sono</button>
+
+    <div id="screendiv"> </div>
+
+</body>
+
+</html>

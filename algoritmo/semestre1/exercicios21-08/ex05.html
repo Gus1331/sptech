@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex05</title>
+
+
+    <script defer>
+        function calcVT(){ 
+            var uber = ((viagens.value * 0.10) * distancia.value) * 0.75;
+            screendiv.innerHTML = `Você vai gastar R$${
+                (passagem.value * (viagens.value * 0.90)) + uber
+            } por mês com transporte`;
+        }
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Valor da passagem</p>
+    <input type="text" id="passagem">
+    <br>
+    <p>Quantidade de passagens no mês</p>
+    <input type="text" id="viagens">
+    <br>
+    <p>Distância distância do trabalho até sua casa(em km)</p>
+    <input type="text" id="distancia">
+    <br>
+    <br>
+    <button onclick="calcVT();">Calcular VT </button>
+    <br>
+    <br>
+
+    <div id="screendiv"></div>
+
+</body>
+
+</html>

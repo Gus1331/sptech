@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex03</title>
+    <script defer>
+        function calc(){
+            var preco;
+            
+            if(choc.value > 12){
+                preco = 2.50;
+            }
+            else {
+                preco = 3
+            }
+
+            valor = choc.value * preco
+            screendiv.innerHTML = `o valor da sua compra foi de R$${valor}`;
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Quantidade de chocolates comprados:</p>
+    <input type="text" id="choc">
+    <button onclick="calc();">Compra</button>
+    <br>
+    <br>
+    <div id="screendiv"></div>
+
+</body>
+</html>

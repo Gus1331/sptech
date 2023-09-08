@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação Continuada 1</title>
+</head>
+
+<body>
+    <p>Quantidade de energia consumida em kWh:</p>
+    <input type="number" id="energiaConsumida">
+    <br>
+
+    <p>Bandeira tarifária da energia: ("vermelha", "amarela" ou "verde")</p>
+    <input type="text" id="bandeiraEnergia">
+    <br>
+
+    <p>Volume de água consumido em litros:</p>
+    <input type="number" id="litrosAgua">
+    <br>
+
+    <p>Quantidade de vazamentos de água na casa:</p>
+    <input type="text" id="vazamentosAgua">
+    <br>
+
+    <p>Volume de gás consumido em litros:</p>
+    <input type="number" id="litrosGas">
+    <br>
+
+    <p>Valor base do plano de internet:</p>
+    <input type="number" id="planoInternet">
+    <br>
+
+    <p>Indicação se há uma linha telefônica vinculada ao plano de internet ("sim" ou "não")</p>
+    <input type="text" id="linhaTelefonica">
+    <br>
+
+    <br>
+    <button onclick="calcDespesas();">Calcular despesas fixas</button>
+    <br>
+
+    <br>
+    <div id="screendiv"></div>
+
+    <script>
+        function calcDespesas(){
+            //VARIAVEIS
+            var energia = Number(energiaConsumida.value);
+            var bandeira = bandeiraEnergia.value;
+            var agua = Number(litrosAgua.value);
+            var vazamentos = Number(vazamentosAgua.value);
+            var gas = Number(litrosGas.value);
+            var internet = Number(planoInternet.value);
+            var telefone = linhaTelefonica.value;
+
+            var energiaFinal;
+            var aguaFinal;
+            var gasFinal;
+            var internetFinal; 
+            var total;
+
+            var baseEnergia;
+            var baseAgua = 3.50;
+            var baseGas = 2.50;
+            
+            //ENERGIA----------------------------------------------------------------   
+            if(bandeira == "verde"){
+                baseEnergia = 0.75;
+            }
+            if(bandeira == "amarela"){
+                baseEnergia = 0.90;
+            }
+            if(bandeira == "vermelha"){
+                baseEnergia = 1.0;
+            }
+
+            if(energia <= 50){ // desconto
+                baseEnergia = baseEnergia *  0.90;
+            }
+
+            energiaFinal = energia * baseEnergia; //final
+
+
+            //AGUA---------------------------------------------------------------------
+            baseAgua = baseAgua ; // calculo da base
+
+            aguaFinal = (agua * baseAgua) + (vazamentos * 10); //final
+
+            //GAS----------------------------------------------------------------------
+            gasFinal = gas * baseGas; //final
+
+            //INTERNET/TELEFONE--------------------------------------------------------
+            if(telefone == "sim"){
+                internetFinal = internet * 1.25; //acrésimo de telefone (final 1)
+            }
+            else{
+                internetFinal = internet; // sem acrésimo (final 2)
+            }
+
+            //TOTAL--------------------------------------------------------------------
+            total = energiaFinal + aguaFinal + gasFinal + internetFinal;
+            
+            //DISPLAY------------------------------------------------------------------
+            screendiv.innerHTML = `
+            <p>Com o consumo de <strong>${energia}</strong> kWh na bandeira <strong>${bandeira}</strong>, a conta de energia totaliza R$ <strong>${energiaFinal}</strong>.</p>
+
+            <p>Com o consumo de <strong>${agua}</strong> litros de água contendo <strong>${vazamentos}</strong> vazamentos, a conta de água totaliza R$ <strong>${aguaFinal}</strong>.</p>
+
+            <p>Com o consumo de <strong>${gas}</strong> litros de gás, a conta de gás totaliza R$ <strong>${gasFinal}</strong>.</p>
+
+            <p>Com um valor base de R$ <strong>${internet}</strong> no plano de internet , a conta de internet/telefone totaliza R$ <strong>${internetFinal}</strong>.</p>
+            <p>Gasto total de despesas mensal: R$ <strong>${total}</strong>.</p>
+            `;
+        }
+    </script>
+</body>
+
+</html>

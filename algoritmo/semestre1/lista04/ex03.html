@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex03</title>
+
+    <script defer>
+        function calcDesempenho(){
+            var n1 = Number(num1.value);
+            var n2 = Number(num2.value);
+            var n3 = Number(num3.value);
+            var media = (n1 + n2 + n3) / 3;
+            var acima = "";
+            if (media > 9.4){
+                acima = "<p>Parabéns, você é fora de série!</p>";
+            }
+            screendiv.innerHTML = `Sua média foi de ${media} ${acima}`;
+        }
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Informe 3 notas:</p>
+    <p>nota1</p>
+    <input type="text" id="num1">
+    <p>nota2</p>
+    <input type="text" id="num2">
+    <p>nota3</p>
+    <input type="text" id="num3">
+    <br>
+    <br>
+    <button onclick="calcDesempenho();">Analisar desempenho</button>
+    <br>
+    <br>
+    <div id="screendiv"></div>
+
+</body>
+
+</html>

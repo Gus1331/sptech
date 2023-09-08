@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex05</title>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr> 
+
+    <input type="text" id="idade" placeholder="Sua Idade">
+    <br>
+
+    <button onclick="checkM();">Aposentadoria homem</button>
+    <button onclick="checkF();">Aposentadoria mulher</button>
+
+    <script defer>
+        function checkF() {
+            alert(`Falta ${(60 - idade.value)} anos para a sua aposentadoria`);
+        };
+        function checkM() {
+            alert(`Falta ${(70 - idade.value)} anos para a sua aposentadoria`);
+        }
+    </script>
+
+</body>
+</html>

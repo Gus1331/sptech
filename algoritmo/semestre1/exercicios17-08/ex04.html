@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex04</title>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr> 
+
+    <input type="text" id="endereco" placeholder="Seu endereço (Rua/avenida/vila)">
+    <input type="text" id="numCasa" placeholder="Numero da casa">
+    <button onclick="func1();">Onde eu moro</button>
+
+    <script defer>
+        function func1(){
+            alert(`Seu logradouro é ${endereco.value}.`);
+            alert(`O numero do seu logradouro é ${numCasa.value}.`);
+        }
+    </script>
+    <style>
+        input{
+            width: 100%;
+        }
+    </style>
+
+</body>
+</html>

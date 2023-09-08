@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex03</title>
+
+
+    <script defer>
+        function calcTabuada(){
+            screendiv.innerHTML = `
+            ${n1.value} x 1 = ${n1.value *1}<br>
+            ${n1.value} x 2 = ${n1.value *2}<br>
+            ${n1.value} x 3 = ${n1.value *3}<br>
+            ${n1.value} x 4 = ${n1.value *4}<br>
+            ${n1.value} x 5 = ${n1.value *5}<br>
+            ${n1.value} x 6 = ${n1.value *6}<br>
+            ${n1.value} x 7 = ${n1.value *7}<br>
+            ${n1.value} x 8 = ${n1.value *8}<br>
+            ${n1.value} x 9 = ${n1.value *9}<br>
+            `;
+        }
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Insira um Numero:</p>
+    <input type="text" id="n1">
+    <br>
+    <br>
+    <button onclick="calcTabuada();">Ver tabuada</button>
+    <br>
+    <br>
+    <div id="screendiv"></div>
+
+</body>
+
+</html>
