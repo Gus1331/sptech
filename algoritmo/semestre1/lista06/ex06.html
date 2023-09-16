@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex06</title>
+    <script>
+        function mostrarFrase() {
+            var time = timeFutebol.value
+
+            if (time == "Corinthians") {
+                screendiv.innerHTML = `<span style="background-color: black; color: white;">Salve o Corinthians</span>`;
+            }
+            else if (time == "Palmeiras") {
+                screendiv.innerHTML = `<span style="background-color: green; color: white;">Salve o alviverde imponente</span>`;
+            }
+            else if (time == "Santos") {
+                screendiv.innerHTML = `<span style="background-color: white;color: black;">Agora quem dá a bola é o Santos</span>`;
+            }
+            else if (time == "São Paulo") {
+                screendiv.innerHTML = `<span style="background-color: black; color: red;">Salve o Tricolor paulista</span>`;
+            }
+            else {
+                screendiv.innerHTML = `Não conheço este time!`;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+    <p>Qual grande time de São Paulo você torce?</p>
+    <input type="text" id="timeFutebol">
+    <br>
+    <button onclick="mostrarFrase();">Fale sobre esse time</button>
+    <br>
+    <div id="screendiv"></div>
+</body>
+
+</html>

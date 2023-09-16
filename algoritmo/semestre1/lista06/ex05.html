@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex05</title>
+    <script>
+        function classificarAluno(){
+            var nota = Number(notaAluno.value);
+
+            if (nota < 5){
+                screendiv.innerHTML = `Aluno precisa de muita ajuda`;
+            }
+            else if (nota <= 7){
+                screendiv.innerHTML = `Aluno na média`;
+            }
+            else if (nota <= 9.5){
+                screendiv.innerHTML = `Aluno na acima da média`;
+            }
+            else{
+                screendiv.innerHTML = `Aluno fora da curva`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+    <p>Nota do aluno:</p>
+    <input type="text" id="notaAluno">
+    <br>
+    <button onclick="classificarAluno();">Classificar aluno</button>
+    <br>
+    <div id="screendiv"></div>
+</body>
+</html>

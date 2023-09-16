@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex07</title>
+    <script>
+        function analisar() {
+            var dinheiro = Number(dinheiroEconomizado.value);
+            var msg;
+
+            if (dinheiro <= 0){
+                msg = `Nada de compras &#x1F641;`;
+            }
+            else if (dinheiro <= 100){
+                msg = `Viagem de ida e volta para a Praia Grande`;
+            }
+            else if (dinheiro <= 4000){
+                msg = `Viagem de ida e volta para a Praia Grande <br>Uma boa moto usada`;
+            }
+            else{
+                msg = `Uma boa moto usada <br> Mais alguma bobagem legal`;
+            }
+
+            screendiv.innerHTML = msg;
+        }
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+    <p>Dinheiro Economizado:</p>
+    <input type="text" id="dinheiroEconomizado">
+    <br>
+    <button onclick="analisar();">Poder de compra</button>
+    <br>
+    <div id="screendiv"></div>
+</body>
+
+</html>

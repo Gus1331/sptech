@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex03</title>
+    <script>
+        function analiseTemperatura(){
+            var temp = temperatura.value;
+
+            if (temp < 14){
+                screendiv.innerHTML = `Congelante`;
+            }
+            else if (temp <= 21){
+                screendiv.innerHTML = `Com frio`;
+            }
+            else if (temp <= 24){
+                screendiv.innerHTML = `Confortável`;
+            }
+            else if (temp <= 31){
+                screendiv.innerHTML = `Com calor`;
+            }
+            else {
+                screendiv.innerHTML = `Calor escaldante`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+    <p>Temperatura:</p>
+    <input type="text" id="temperatura">
+    <br>
+    <button onclick="analiseTemperatura();">Análise</button>
+    <br>
+    <div id="screendiv"></div>
+</body>
+</html>

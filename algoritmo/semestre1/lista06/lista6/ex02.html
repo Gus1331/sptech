@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02</title>
+    <script>
+        function analisarRenda(){
+            var renda = Number(rendaFamiliar.value);
+
+            if (renda <= 250 ){
+                screendiv.innerHTML = `Classe E`;
+            }
+            else if (renda <= 900){
+                screendiv.innerHTML = `Classe D`;
+            }
+            else if (renda <= 2500){
+                screendiv.innerHTML = `Classe C`;
+            }
+            else if (renda <= 9500){
+                screendiv.innerHTML = `Classe B`;
+            }
+            else{
+                screendiv.innerHTML = `Classe A`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+    <p>Renda familiar mensal:</p>
+    <input type="text" id="rendaFamiliar">
+    <br>
+    <button onclick="analisarRenda();">Analisar Renda</button>
+    <br>
+    <div id="screendiv"></div>
+</body>
+</html>

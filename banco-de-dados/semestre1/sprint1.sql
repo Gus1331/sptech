@@ -1,31 +1,10 @@
+ -- BANCO DE DADOS ----------------------------------------------------
 CREATE DATABASE asl;
-DROP DATABASE asl;
-
 USE asl;
 
-CREATE TABLE sensor
-	(sensorId INT PRIMARY KEY AUTO_INCREMENT,
-    empresaId INT NOT NULL,
-    esteira VARCHAR(10),
-    tipo VARCHAR(7) NOT NULL);
-     
-ALTER TABLE sensor MODIFY COLUMN tipo VARCHAR(7), ADD CONSTRAINT checktipo CHECK (tipo = 'entrada' OR tipo = 'saida');
 
-CREATE TABLE registro
-	(registroId INT PRIMARY KEY AUTO_INCREMENT,
-    sensorId INT,
-    dataRegistro DATETIME DEFAULT CURRENT_TIMESTAMP);
-
-CREATE TABLE esteira
-	(empresaId INT PRIMARY KEY AUTO_INCREMENT,
-    identificacao VARCHAR(10),
-	produto VARCHAR(25),
-    condicao VARCHAR(10),
-    producaoEstimadaPorMin INT);
-    
-ALTER TABLE esteira MODIFY COLUMN condicao VARCHAR(11), ADD CONSTRAINT checkCondicao CHECK (condicao = 'funcionando' OR condicao = 'parado');
-
-CREATE TABLE cliente
+ -- TABELAS -----------------------------------------------------------
+CREATE TABLE cliente /* 8 colunas */
 	(clientesId INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50) NOT NULL,
     qtdSensores INT DEFAULT NULL,
@@ -34,28 +13,83 @@ CREATE TABLE cliente
     cnpj INT DEFAULT NULL,
     cpf INT DEFAULT NULL,	
     senha VARCHAR(30) NOT NULL);
+ 
+CREATE TABLE sensor /* 4 colunas */
+	(sensorId INT PRIMARY KEY AUTO_INCREMENT,
+    empresaId INT NOT NULL,
+    esteira VARCHAR(10),
+    tipo VARCHAR(7) NOT NULL);
+    
+CREATE TABLE esteira /* 5 colunas */
+	(empresaId INT PRIMARY KEY AUTO_INCREMENT,
+    identificacao VARCHAR(10),
+	produto VARCHAR(25),
+    condicao VARCHAR(10),
+    producaoEstimadaPorMin INT);
 
+CREATE TABLE registro /* 3 colunas */
+	(registroId INT PRIMARY KEY AUTO_INCREMENT,
+    sensorId INT,
+    dataRegistro DATETIME DEFAULT CURRENT_TIMESTAMP);
+    
+-- CONSTRAINTS ------------------------------------------------
+ALTER TABLE sensor MODIFY COLUMN tipo VARCHAR(7), ADD CONSTRAINT checktipo CHECK (tipo = 'entrada' OR tipo = 'saida');
+ALTER TABLE esteira MODIFY COLUMN condicao VARCHAR(11), ADD CONSTRAINT checkCondicao CHECK (condicao = 'funcionando' OR condicao = 'parado');
 
--- VALORES -------------------------------------------------
-
-INSERT INTO sensor VALUES 
-(NULL, 1, '1', 'Cerveja', 'entrada', 30000, '2020-05-13'),
-(NULL, 2, '2', 'Danone', 'saida', 20000, '2021-08-29') ,
-(NULL, 3, '3', 'Chocolate', 'saida', 45000, '2022-01-01');
+-- VALORES -----------------------------------------------------
 
 INSERT INTO cliente VALUES
-    (NULL, 'Joao', 30, 'joao123@gmail.com', '1198756875', 031332203-12, 'joao123'),
-    (NULL, 'CacauChocolates', 100, 'chocolatescacau@hotmail.com', '1138698796', 13941123, 'cacauchoco2930'),
-    (NULL, 'Patricia', 25, 'patricia875@gmail.com', '1197563457', 0234124129-90, 'paty2039');
-
+	(790, 'Cleber Antônio Araujo', 16, 'cleber@email.com', '123456789-00', 12345667, NULL, 'senha123'),
+	(402, 'Ana Beatriz das Flores', 36, 'ana@email.com', '345678912-00', NULL, 38738472, '62#Fot5R'),
+	(791, 'Joao Freitas', 18, 'joao@gmail.com', '84193728900', NULL, 49841589, 'ult6779gf');
+    
+INSERT INTO sensor VALUES 
+	(126, 268, '1', 'entrada'),
+    (127, 269, '1', 'saida'),
+    (723, 856, 'Forno C', 'entrada');
+    
 INSERT INTO esteira VALUES
-    (NULL, '1', 'funcionando', 20, 8, 12, 0), 
-    (NULL, '2', 'parado', 20, 40, 20, 10),
-    (NULL, '1', 'funcionando' ,10, 7, 3, 0);
-    
-    
-SELECT * FROM sensor;
+	(269, '1', 'copo modelo J', 'funcionando', 40),
+    (270, '2', 'copo modelo K', 'parado', 45),
+    (856, 'Forno C', 'frasco 4', 'funcionando',55);
 
+INSERT INTO registro (registroId, sensorId) VALUES
+	(1298312, 126),
+    (1298313, 126),
+    (1298314, 723);
+    
+-- SELECTS -----------------------------------------------------
 SELECT * FROM cliente;
 
+SELECT * FROM sensor;
+
 SELECT * FROM esteira;
+
+SELECT * FROM registro;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TRUNCATE TABLE cliente;
+TRUNCATE TABLE registro;
+TRUNCATE TABLE sensor;
+TRUNCATE TABLE esteira;

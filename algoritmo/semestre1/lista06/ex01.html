@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex01</title>
+    <script>
+        function analisarEstatura(){
+            var altura = Number(alturaUsuario.value)
+
+            if (altura <= 1.65){
+                screendiv.innerHTML = `Você pode ser piloto de corrida`;
+            }
+            else if (altura < 1.80){
+                screendiv.innerHTML= `Você pode ser jogador de futebol`;
+            }
+            else {
+                screendiv.innerHTML = `Você pode ser jogador de vôlei ou basquete`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+    <p>Sua Altura:</p>
+    <input type="text" id="alturaUsuario">
+    <br>
+    <button onclick="analisarEstatura();">Analisar Estatura</button>
+    <br>
+    <div id="screendiv"></div>
+</body>
+</html>

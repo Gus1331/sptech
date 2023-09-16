@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colisão? </title>
+    <script defer>
+        function calcColisao() {
+            var ax0 = Number(ax0_input.value);
+            var ay0 = Number(ay0_input.value);
+            var ax1 = Number(ax1_input.value);
+            var ay1 = Number(ay1_input.value);
+            var bx0 = Number(bx0_input.value);
+            var by0 = Number(by0_input.value);
+            var bx1 = Number(bx1_input.value);
+            var by1 = Number(by1_input.value);
+
+            var colisao = 0;
+            
+            /*
+            var tamanhoAx = ax1 - ax0;
+            var tamanhoBx = bx1 - bx0;
+            var tamanhoAy = ay1 - ay0;
+            var tamanhoBy = by1 - by0;
+
+            if (ax0 < bx0) {
+                if ((ax0 + tamanhoAx) - (bx1 - tamanhoBx) >= 0) {
+                    colisao = 1;
+                }
+            }
+            else {
+                if ((bx0 + tamanhoBx) - (ax1 - tamanhoAx)  >= 0) {
+                    colisao = 1;
+                }
+            }
+
+            if (ay0 < by0) {
+                if ((ay0 + tamanhoAy) - (by1 - tamanhoBy) >= 0) {
+                    colisao = 1;
+                }
+            }
+            else {
+                if ((by0 + tamanhoBy) - (ay1 - tamanhoAy) >= 0) {
+                    colisao = 1;
+                }
+            }
+            */
+
+            if (bx0 <= ax1){
+                colisao = 1;
+            }
+            if(by0 <= ay1){
+                colisao = 1;
+            }
+            if(ax0 <= bx1){
+                colisão = 1;
+            }
+            if(ay0 <= by1){
+                colisão = 1;
+            }
+
+            screendiv.innerHTML = `${colisao}`;
+
+        }
+    </script>
+</head>
+
+<body>
+    <p>Elemento A</p>
+    <p>X0 <input type="number" id="ax0_input"> Y0 <input type="number" id="ay0_input"></p>
+    <p>X1 <input type="number" id="ax1_input"> Y1 <input type="number" id="ay1_input"></p>
+    <p>Elemento B</p>
+    <p>X0 <input type="number" id="bx0_input"> Y0 <input type="number" id="by0_input"></p>
+    <p> X1 <input type="number" id="bx1_input"> Y1 <input type="number" id="by1_input"></p>
+    <button onclick="calcColisao();">Existe Colisão?</button>
+    <br><br>
+    <div id="screendiv"></div>
+</body>
+
+</html>

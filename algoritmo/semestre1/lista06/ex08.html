@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex08</title>
+    <script>
+        function verificarCalorias(){
+            var pao = Number(pao_input.value);
+            var bolacha = Number(bolacha_input.value);
+            var achoc = Number(achocolatado_input.value);
+            var calorias = (pao * 50) + (bolacha * 80) + (achoc * 70);
+            var msg;
+
+            if(calorias <= 200){
+                msg = `Parabéns, vai ficar em forma !`;
+            }
+            else if(calorias <= 400) {
+                msg = `Cuidado, vai ficar menos saudável !`;
+            }
+            else{
+                msg = `Alerta crítico de saúde !!!`;
+            }
+
+            screendiv.innerHTML = msg;
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Pães franceses consumidos por dia:</p>
+    <input type="text" id="pao_input">
+    <br>
+
+    <p>Pacotes de bolacha consumidos por dia:</p>
+    <input type="text" id="bolacha_input">
+    <br>
+
+    <p>Copos de achocolatado consumidos por dia:</p>
+    <input type="text" id="achocolatado_input">
+    <br>
+
+    <button onclick="verificarCalorias();">Verificar calorias</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+</html>

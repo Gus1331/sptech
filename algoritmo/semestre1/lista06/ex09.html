@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex09</title>
+    <script>
+        function analisarEconomia(){
+            var meta = meta_input.value
+            var guardado = guardado_input.value
+            var diferenca = meta - guardado;
+            var msg;
+
+            if(guardado >= meta){
+                msg = `Parabéns, meta alcançada! <br> Meta ultrapassada em ${diferenca * -1}`;
+            }
+            else{
+                msg = `Força! Ainda em busca da meta! Falta ${diferenca}`;
+            }
+            screendiv.innerHTML = msg
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+    <p>Meta de econômia:</p>
+    <input type="text" id="meta_input">
+    <br>
+
+    <p>Dinheiro guardado:</p>
+    <input type="text" id="guardado_input">
+    <br>
+
+    <button onclick="analisarEconomia();">Analisar Economia</button>
+
+    <div id="screendiv"></div>
+</body>
+</html>
