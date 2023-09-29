@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex09</title>
+    <script>
+        function analisar(){
+            var marca = input_marca.value;
+            var preco = input_preco.value;
+
+            if(preco <= 800 || preco >= 2000){
+                msg = `TV fora da faixa de preço<br>`;
+
+                if(preco <= 800){
+                    msg += `Preço baixo demais!`;
+                }
+                else{
+                    msg += `TV cara demais, infelizmente`;
+                }
+            }
+            else if(marca == `Mondial` || marca == `Britânia` && preco <= 800 && preco >= 2000){
+                msg = `Na faixa de preço, porém marca não confiável`;
+            }
+            else if (preco)
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Marca da TV (dentre as opções "Samsung", "LG", "Mondial" e "Britânia")</p>
+    <input type="text" id="input_marca">
+    <br>
+
+    <p>Preço da TV:</p>
+    <input type="text" id="input_preco">
+    <br>
+
+    <button onclick="analisar();">Analisar compra</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+</html>

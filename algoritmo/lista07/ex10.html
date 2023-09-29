@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex10</title>
+    <script>
+        function analisar(){
+            var idade = input_idade.value;
+            var salario = input_salario.value;
+            var msg;
+
+            if(idade < 18 && salario < 2500){
+                msg = `Menor de idade e liso`;
+            }
+            else if (idade < 18 && salario > 2500){
+                msg = `Menor de idade e ostentação`;
+            }
+            else if (idade >= 18 && salario < 3500){
+                msg = `Maior de idade e liso`;
+            }
+            else if (salario >= 3500 && salario <= 7000){
+                msg = `Maior de idade e ostentação`;
+            }
+            else{
+                msg = `Maior de idade e mega ostentação`;
+            }
+
+            screendiv.innerHTML = msg;
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Sua Idade:</p>
+    <input type="text" id="input_idade">
+    <br>
+
+    <p>Seu salário:</p>
+    <input type="text" id="input_salario">
+    <br>
+
+    <button onclick="analisar();">Analisar situação</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+</html>

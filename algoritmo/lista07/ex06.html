@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex06</title>
+    <script>
+        function avaliarAluno(){
+            var freq = Number(input_frequencia.value);
+            var nota = Number(input_nota.value);
+
+            if(freq >=  75 && nota >= 6){
+                alert(`Parabéns! Aprovado!`);
+            }
+            else{
+                alert(`Infelizmente, não foi desta vez`);
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Nota do aluno:</p>
+    <input type="text" id="input_nota">
+    <br>
+    
+    <p>Frenquência do aluno:</p>
+    <input type="text" id="input_frequencia">
+    <br>
+
+    <button onclick="avaliarAluno();">Avaliar aluno</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+</html>

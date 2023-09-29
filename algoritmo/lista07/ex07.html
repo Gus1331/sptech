@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex07</title>
+    <script>
+        function entrar(){
+            var login = input_login.value;
+            var senha = input_senha.value;
+
+            if(login == "SPTech" && senha == "digital"){
+                alert(`Usuário autenticado com sucesso`);
+            }
+            else{
+                alert(`Falha na autenticação`);
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Login:</p>
+    <input type="text" id="input_login">
+    <br>
+
+    <p>Senha:</p>
+    <input type="password" id="input_senha">
+    <br>
+
+    <button onclick="entrar();">Entrar</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+</html>

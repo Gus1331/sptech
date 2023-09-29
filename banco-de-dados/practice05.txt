@@ -1,0 +1,232 @@
+1 ------------------------------------------------------------------------------------------------------
+
+mysql> CREATE DATABASE sprint1;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> USE sprint1;
+Database changed
+mysql>
+
+mysql> CREATE TABLE professor
+    -> (idProfessor INT PRIMARY KEY AUTO_INCREMENT,
+    -> nome VARCHAR(50),
+    -> sobrenome VARCHAR(30),
+    -> especialidade1 VARCHAR(40),
+    -> especialidade2 VARCHAR(40)
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> DESCRIBE professor;
++----------------+-------------+------+-----+---------+----------------+
+| Field          | Type        | Null | Key | Default | Extra          |
++----------------+-------------+------+-----+---------+----------------+
+| idProfessor    | int         | NO   | PRI | NULL    | auto_increment |
+| nome           | varchar(50) | YES  |     | NULL    |                |
+| sobrenome      | varchar(30) | YES  |     | NULL    |                |
+| especialidade1 | varchar(40) | YES  |     | NULL    |                |
+| especialidade2 | varchar(40) | YES  |     | NULL    |                |
++----------------+-------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql>
+
+mysql> INSERT INTO professor VALUES
+    -> (NULL, 'Ariel', 'Goulart', 'Java', 'CSS'),
+    -> (NULL, 'Max', 'Pounareff', 'JS', 'python'),
+    -> (NULL, 'Wong', 'Kaeng', 'musica', 'desenho'),
+    -> (NULL, 'Yuri', 'Amorim', 'hidráulica', 'pneumática'),
+    -> (NULL, 'Rosangela' , 'Paixão', 'cálculo', 'graficos'),
+    -> (NULL, 'Viviane', 'Freitas', 'finanças', 'literatura');
+Query OK, 6 rows affected (0.01 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql>  SELECT * FROM professor;
++-------------+-----------+-----------+----------------+----------------+
+| idProfessor | nome      | sobrenome | especialidade1 | especialidade2 |
++-------------+-----------+-----------+----------------+----------------+
+|           1 | Ariel     | Goulart   | Java           | CSS            |
+|           2 | Max       | Pounareff | JS             | python         |
+|           3 | Wong      | Kaeng     | musica         | desenho        |
+|           4 | Yuri      | Amorim    | hidráulica     | pneumática     |
+|           5 | Rosangela | Paixão    | cálculo        | graficos       |
+|           6 | Viviane   | Freitas   | finanças       | literatura     |
++-------------+-----------+-----------+----------------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> CREATE TABLE disciplina
+    -> (idDisc INT PRIMARY KEY AUTO_INCREMENT,
+    -> nomeDisc VARCHAR(45)
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> DESCRIBE disciplina;
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| idDisc   | int         | NO   | PRI | NULL    | auto_increment |
+| nomeDisc | varchar(45) | YES  |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
+2 rows in set (0.00 sec)
+
+mysql> INSERT INTO disciplina VALUES
+    -> (NULL, 'programação'),
+    -> (NULL, 'mecânica'),
+    -> (NULL, 'arte'),
+    -> (NULL, 'matemática');
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM disciplina;
++--------+-------------+
+| idDisc | nomeDisc    |
++--------+-------------+
+|      1 | programação |
+|      2 | mecânica    |
+|      3 | arte        |
+|      4 | matemática  |
++--------+-------------+
+4 rows in set (0.00 sec)
+
+mysql> ALTER TABLE disciplina ADD COLUMN fkProfessor INT;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE disciplina ADD CONSTRAINT fkProfessorDisc FOREIGN KEY (fkProfessor)
+    -> REFERENCES professor(idProfessor);
+Query OK, 4 rows affected (0.03 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> UPDATE disciplina SET fkProfessor = 2 WHERE idDisc = 1;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE disciplina SET fkProfessor = 4 WHERE idDisc = 2;
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE disciplina SET fkProfessor = 3 WHERE idDisc = 3;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE disciplina SET fkProfessor = 5 WHERE idDisc = 4;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM disciplina JOIN professor
+    -> ON fkProfessor = idProfessor;
++--------+-------------+-------------+-------------+-----------+-----------+----------------+----------------+
+| idDisc | nomeDisc    | fkProfessor | idProfessor | nome      | sobrenome | especialidade1 | especialidade2 |
++--------+-------------+-------------+-------------+-----------+-----------+----------------+----------------+
+|      1 | programação |           2 |           2 | Max       | Pounareff | JS             | python         |
+|      2 | mecânica    |           4 |           4 | Yuri      | Amorim    | hidráulica     | pneumática     |
+|      3 | arte        |           3 |           3 | Wong      | Kaeng     | musica         | desenho        |
+|      4 | matemática  |           5 |           5 | Rosangela | Paixão    | cálculo        | graficos       |
++--------+-------------+-------------+-------------+-----------+-----------+----------------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT d.nomeDisc AS 'Disciplina', CONCAT(p.nome,' ', p.sobrenome) AS 'Nome Completo' FROM disciplina AS d JOIN professor AS p
+    -> ON fkProfessor = idProfessor;
++-------------+------------------+
+| Disciplina  | Nome Completo    |
++-------------+------------------+
+| programação | Max Pounareff    |
+| mecânica    | Yuri Amorim      |
+| arte        | Wong Kaeng       |
+| matemática  | Rosangela Paixão |
++-------------+------------------+
+4 rows in set (0.01 sec)
+
+mysql>
+
+mysql> SELECT * FROM disciplina JOIN professor
+    -> ON fkProfessor = idProfessor
+    -> WHERE professor.sobrenome = 'Pounareff';
++--------+-------------+-------------+-------------+------+-----------+----------------+----------------+
+| idDisc | nomeDisc    | fkProfessor | idProfessor | nome | sobrenome | especialidade1 | especialidade2 |
++--------+-------------+-------------+-------------+------+-----------+----------------+----------------+
+|      1 | programação |           2 |           2 | Max  | Pounareff | JS             | python         |
++--------+-------------+-------------+-------------+------+-----------+----------------+----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM disciplina JOIN professor
+    -> ON fkProfessor = idProfessor
+    -> WHERE professor.sobrenome = 'Pounareff';^C
+mysql> SELECT professor.especialidade1, disciplina.nomeDisc FROM disciplina JOIN professor
+    -> ON fkProfessor = idProfessor
+    -> WHERE professor.nome = 'Rosângela'
+    -> ORDER BY especialidade1;
++----------------+------------+
+| especialidade1 | nomeDisc   |
++----------------+------------+
+| cálculo        | matemática |
++----------------+------------+
+1 row in set (0.01 sec)
+
+
+
+
+2 -----------------------------------------------------------------------------------------------------------------------
+
+
+mysql> USE sprint2;
+Database changed
+mysql> CREATE TABLE curso (
+    -> idCurso INT PRIMARY KEY AUTO_INCREMENT,
+    -> nome VARCHAR(50),
+    -> sigla CHAR(3),
+    -> coordenador VARCHAR(45));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> INSERT INTO curso VALUES
+    -> (NULL, 'Análise e desenvolvimento de sistemas', 'ADS', 'Fernando Brandão'),
+    -> (NULL, 'Sistémas de informação', 'SIS', 'Frizza'),
+    -> (NULL, 'Ciência da Computação', 'CCO', 'Vivian');
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> CREATE TABLE instituicao
+    -> (idInstituicao INT PRIMARY KEY AUTO_INCREMENT,
+    -> nome VARCHAR(45),
+    -> cidade VARCHAR(45),
+    -> fkCurso INT);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> ALTER TABLE instituicao ADD CONSTRAINT
+    -> fkCursoInstituicao FOREIGN KEY (fkCurso)
+    -> REFERENCES curso(idCurso);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO instituicao VALUES (
+    -> NULL, 'SPTech','Consolação',1),
+    -> (NULL, 'SENAI', 'Brás', 2),
+    -> (NULL, 'FIAP', 'Acre', 3);
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+
+mysql> SELECT * FROM instituicao JOIN curso
+    -> ON fkCurso = idCurso;
++---------------+--------+------------+---------+---------+---------------------------------------+-------+------------------+
+| idInstituicao | nome   | cidade     | fkCurso | idCurso | nome                                  | sigla | coordenador      |
++---------------+--------+------------+---------+---------+---------------------------------------+-------+------------------+
+|             1 | SPTech | Consolação |       1 |       1 | Análise e desenvolvimento de sistemas | ADS   | Fernando Brandão |
+|             2 | SENAI  | Brás       |       2 |       2 | Sistémas de informação                | SIS   | Frizza           |
+|             3 | FIAP   | Acre       |       3 |       3 | Ciência da Computação                 | CCO   | Vivian           |
++---------------+--------+------------+---------+---------+---------------------------------------+-------+------------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT * FROM instituicao JOIN curso
+    -> ON fkCurso = idCurso
+    -> WHERE cidade = 'Consolação';
++---------------+--------+------------+---------+---------+---------------------------------------+-------+------------------+
+| idInstituicao | nome   | cidade     | fkCurso | idCurso | nome                                  | sigla | coordenador      |
++---------------+--------+------------+---------+---------+---------------------------------------+-------+------------------+
+|             1 | SPTech | Consolação |       1 |       1 | Análise e desenvolvimento de sistemas | ADS   | Fernando Brandão |
++---------------+--------+------------+---------+---------+---------------------------------------+-------+------------------+
+1 row in set (0.00 sec)
+
+mysql> ALTER TABLE curso
+    -> ADD CONSTRAINT checkSigla CHECK (sigla IN ('ADS', 'SIS', 'CCO'));
+Query OK, 3 rows affected (0.03 sec)
+Records: 3  Duplicates: 0  Warnings: 0

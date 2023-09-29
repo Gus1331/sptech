@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex05</title>
+    <script>
+        function analisar(){
+            var temp = input_temperatura.value;
+            var msg;
+
+            if (temp < 21 || temp > 24){
+                if (temp < 21){
+                    msg = `As pessoas vão ter hipotermia`;
+                }
+                if (temp > 24){
+                    msg = `As pessoas vão derreter`;
+                }
+            }
+            else{
+                msg = ``;
+            }
+            screendiv.innerHTML = msg;  
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Temperatura atual:</p>
+    <input type="text" id="input_temperatura">
+    <br>
+
+    <button onclick="analisar();">Analisar clima</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+</html>

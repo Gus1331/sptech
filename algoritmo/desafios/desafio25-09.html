@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker</title>
+    <script>
+        var nClick = 0;
+        function updateClick(){
+            nClick += 1;
+            screendiv.innerHTML = nClick;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="updateClick();">Clique em mim</button>
+    <br>
+
+    <p>Cliques:
+        <span id="screendiv">0</span>
+    </p>
+</body>
+</html>

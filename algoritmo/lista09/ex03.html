@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex03</title>
+    <style>
+        #info{
+            background-color: blue;
+            color: yellow;
+        }
+    </style>
+    <script>
+        var guardado = 0;
+        var depositos = 0;
+        var retiradas = 0;
+        
+        function depositar050(){
+            guardado += 0.50;
+            depositos += 1;
+            guardadoDiv.innerHTML = guardado;
+            depositosDiv.innerHTML = depositos;
+        }
+        function depositar200(){
+            guardado += 2;
+            depositos += 1;
+            guardadoDiv.innerHTML = guardado;
+            depositosDiv.innerHTML = depositos;
+        }
+        function retirar050(){
+            guardado -= 0.50;
+            retiradas += 1;
+            guardadoDiv.innerHTML = guardado;
+            retiradasDiv.innerHTML = retiradas;
+        }
+        function retirar(){
+            guardado -= Number(input_retirar.value);
+            retiradas += 1;
+            guardadoDiv.innerHTML = guardado;
+            retiradasDiv.innerHTML = retiradas;
+
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <div id="info">
+        Total guardado no cofrinho: R$<span id="guardadoDiv">0</span><br>
+        Depósitos efetuados: <span id="depositosDiv">0</span><br>
+        Retiradas efetuadas: <span id="retiradasDiv">0</span><br>
+    </div>
+    <br>
+
+    <br>
+    <button onclick="depositar050();">Depositar 0,50</button>
+    <button onclick="depositar200();">Depositar 2,00</button>
+    <button onclick="retirar050();">Retirar 0,50</button>
+    <br>
+
+    <br>
+    <input type="text" id="input_retirar">
+    <button onclick="retirar();">Retirar</button>
+</body>
+</html>

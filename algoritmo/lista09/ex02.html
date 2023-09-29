@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02</title>
+    <script>
+        var salario;
+
+        function confirmarSalario(){
+            salario = input_salario.value;
+            screendiv1.innerHTML = `Grana atual: R$${salario}`;
+        }
+        
+        function pagar100(){
+            salario -= 100
+            screendiv1.innerHTML = `Grana atual: R$${salario}`;
+            screendiv2.innerHTML += `<br><span style="color: red;">(-100)</span>`;
+        }
+        function pagar500(){
+            salario -= 500
+            screendiv1.innerHTML = `Grana atual: R$${salario}`;
+            screendiv2.innerHTML += `<br><span style="color: red;">(-500)</span>`;
+        }
+        
+        function ganhar2000(){
+            salario += 2000
+            screendiv1.innerHTML = `Grana atual: R$${salario}`;
+            screendiv2.innerHTML += `<br><span style="color: lime;">(+2000)</span>`;
+        }
+
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Salário:</p>
+    <input type="text" id="input_salario">
+    <br>
+    <br>
+
+    <button onclick="confirmarSalario();">Confirmar salário</button>
+    <button onclick="pagar100();">Pagar conta de 100</button>
+    <button onclick="pagar500();">Pagar conta de 500</button>
+    <button onclick="ganhar2000();">Ganhar 2000 na loteria</button>
+    <br>
+
+    <br>
+    <div id="screendiv1">---</div>
+    <div id="screendiv2">Extrato</div>  <!-- Treino pessoal -->
+</body>
+</html>

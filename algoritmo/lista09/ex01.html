@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex01</title>
+    <style>
+        #tela{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+        }
+    </style>
+    <script>
+        var telaW = 100;
+
+        function aumentar(){
+            telaW += 10;
+            tela.style.width = telaW+"px";
+        }
+        function diminuir(){
+            telaW -= 10;
+            tela.style.width = telaW+"px";
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <div id="tela"></div>
+    <br>
+
+    <button onclick="aumentar();">Aumentar imagem</button>
+    <button onclick="diminuir();">Diminuir imagem</button>
+
+</body>
+</html>

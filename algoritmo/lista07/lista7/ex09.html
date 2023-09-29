@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex09</title>
+    <script>
+        function validarPiloto(){
+            var altMin = Number(input_minima.value);
+            var altMax = Number(input_maxima.value);
+            var nome = input_nome_usuario.value
+            var altUsu = Number(input_altura_usuario.value);
+
+            if (altMin > 1 && altMin < altMax){
+
+                if(altUsu > altMin && altUsu < altMax){
+                    screendiv.innerHTML += `O candidato ${nome} com altura de ${altUsu} participará do processo de seleção de piloto. <br>`;
+                }
+                else{
+                    screendiv.innerHTML += `Infelizmente o candidato ${nome} com altura de ${altUsu} não atende os requisitos.<br>` ;
+                }
+            }
+            else{
+                alert(`Critérios incorretos, verifique e preencha novamente`);
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <p>Altura inicial de seleção:</p>
+    <input type="text" id="input_minima" min="1">
+    <p>Altura final de seleção:</p>
+    <input type="text" id="input_maxima">
+    <br>
+    <p>Nome do candidato:</p>
+    <input type="text" id="input_nome_usuario">
+    <p>Altura do candidato</p>
+    <input type="text" id="input_altura_usuario">
+    <br>
+
+    <button onclick="validarPiloto();">Validar piloto</button>
+    <br>
+
+    <div id="screendiv"> </div>
+</body>
+</html>

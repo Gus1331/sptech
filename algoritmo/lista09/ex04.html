@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04</title>
+    <script>
+        var esquerda = 0;
+        function moverDireita(){
+            esquerda += Number(qtdPx.value);
+            bart.style.marginLeft = `${esquerda}px`;
+        }
+        function moverEsquerda(){
+            esquerda -= Number(qtdPx.value);
+            console.log(esquerda)
+            bart.style.marginLeft = `${esquerda}px`;
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <br>
+    <button onclick="moverDireita();">Mover para direita</button>
+    <button onclick="moverEsquerda();">Mover para esquerda</button>
+    Quantos pixels <input type="number" id="qtdPx"> 
+    <br>
+
+    <img id="bart" src="https://ih1.redbubble.net/image.3049323076.5225/st,small,507x507-pad,600x600,f8f8f8.jpg" style="width: 250px;">
+
+
+</body>
+</html>

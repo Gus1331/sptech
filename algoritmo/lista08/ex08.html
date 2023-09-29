@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex08</title>
+    <script>
+        function verificar(){
+            var nomeEmpresa = input_nome_empresa.value;
+            var valorBolsa = input_valor_bolsa.value;
+            var valorVr = input_valor_vr.value;
+            var deslocamento = input_deslocamento.value;
+            var msg;    
+
+            if(valorBolsa >= 1800 ||valorVr >= 20 || deslocamento <= 30){
+                msg = `A empresa ${nomeEmpresa} é uma de suas preferências`;
+            }
+            else{
+                msg = `A empresa ${nomeEmpresa} está fora da sua lista`;
+            }
+            screendiv.innerHTML = msg;
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Nome da empresa:</p>
+    <input type="text" id="input_nome_empresa">
+    <br>
+
+    <p>Valor da bolsa:</p>
+    <input type="text" id="input_valor_bolsa">
+    <br>
+
+    <p>Valor do VR:</p>
+    <input type="text" id="input_valor_vr">
+    <br>
+
+    <p>Tempo de deslocamento (Empresa para SPTech):</p>
+    <input type="text" id="input_deslocamento">
+    <br>
+
+    <button onclick="verificar();">É preferida?</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+</html>

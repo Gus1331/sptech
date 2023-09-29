@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex03</title>
+    <script>
+        function verificar(){
+            var individual = Number(input_renda_individual.value);
+            var familiar = Number(input_renda_familiar.value);
+            var msg;
+
+            if (individual <= 2000 || familiar <= 3000){
+                msg = `Você terá direito ao auxílio`;
+            }
+            else{
+                msg = `Sem direito ao auxílio`;
+            }
+
+            screendiv.innerHTML = msg;
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Renda individual:</p>
+    <input type="text" id="input_renda_individual">
+    <br>
+
+    <p>Renda familiar:</p>
+    <input type="text" id="input_renda_familiar">
+    <br>
+
+    <button onclick="verificar();">Terei o benefício</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+</html>

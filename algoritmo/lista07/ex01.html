@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex01</title>
+    <script>
+        function situacao(){
+            var temp = Number(input_temperatura.value);
+            var msg;
+
+            if (temp >= 21 && temp <= 24){
+                msg = `Temperatura confortável :)`;
+            }
+            else{
+                msg = `Temperatura DESCONFORTÁVEL :(`;
+            }
+            screendiv.innerHTML = msg;
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+    <p>Temperatura atual:</p>
+    <input type="text" id="input_temperatura">
+    <br>
+    <button onclick="situacao();">Ver situação</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+</html>

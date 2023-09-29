@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex11</title>
+    <script>
+        function comprar(){
+            var qtdPass = Number(input_qtd_passagens.value);
+            
+            if(qtdPass >= 8 && qtdPass <=50){
+                var base = qtdPass * 4.4
+
+                if(qtdPass < 19){
+                    base *= 0.97;
+                }
+                else if( qtdPass < 49){
+                    base *= 0.95;
+                }
+                else {
+                    base *= 0.93;
+                }
+                screendiv.innerHTML = `Total a pagar: R$${base}`;
+            }
+            else{
+                alert(`Quantidade inválida para o cartão fidelidade`);
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+    <p>Quantidade de passgaens que deseja adquirir:</p>
+    <input type="text" id="input_qtd_passagens">
+    <br>
+
+    <button onclick="comprar();">Comprar</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+</html>
