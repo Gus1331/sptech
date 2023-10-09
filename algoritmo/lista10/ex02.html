@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02</title>
+    <script>
+        function showPhrase(){
+            var repeat = 1;
+            while (repeat <= 7){
+                screendiv.innerHTML += `Quero mais desafios!!!<br>`;
+                repeat++;
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+    <button onclick="showPhrase();">Diga algo sobre a matéria de Algoritmos</button>
+    <div id="screendiv"></div>
+</body>
+</html>

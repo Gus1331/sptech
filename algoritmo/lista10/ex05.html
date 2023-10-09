@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex05</title>
+    <script>
+        function numeros() {
+            var repeat = 1;
+            screendiv.innerHTML = `-`;
+            while (repeat <= 30) {
+                if (repeat != 3 && repeat != 4 && repeat != 7 && repeat != 10 && repeat != 12) {
+                    screendiv.innerHTML += repeat + `<br>`;
+                }
+                repeat++;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+    <button onclick="numeros();">Números cabalísticos</button>
+    <div id="screendiv"></div>
+</body>
+
+</html>

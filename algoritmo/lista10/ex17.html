@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex17</title>
+    <script>
+        function carona() {
+            var pessoas = Number(input_pessoas.value);
+            var capacidade = Number(input_capacidade.value);
+            var repeat = 2;
+
+            screendiv.innerHTML = `Entrou o 1º passageiro (que é o(a) motorista)<br>`;
+            while (repeat <= pessoas) {
+                if (repeat <= capacidade) {
+                    screendiv.innerHTML += `Entrou o ${repeat}º passageiro<br>`;
+                }
+                else {
+                    screendiv.innerHTML += `O ${repeat}º passageiro terá que esperar!<br>`;
+                }
+                repeat++;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Capacidade máxima de pessoas no veículo:</p>
+    <input type="text" id="input_capacidade">
+    <br>
+
+    <p>Quantas pessoas irão entrar no carro:</p>
+    <input type="text" id="input_pessoas">
+    <br>
+
+    <br>
+    <button onclick="carona();">#Partiu Carona</button>
+    <br>
+
+    <br>
+    <div id="screendiv"></div>
+
+</body>
+
+</html>

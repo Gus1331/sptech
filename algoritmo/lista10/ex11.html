@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex11</title>
+    <script>
+        function iniciarCorrida(){
+            var voltas = Number(input_voltas.value);
+            screendiv.innerHTML = ``;
+            var repeat = 1
+            while(repeat <= voltas){
+                screendiv.innerHTML += `  Carro dando a ${repeat}ª volta <br>`;
+                if(repeat == voltas){
+                    screendiv.innerHTML += `Corrida finalizada!`;
+                }
+                repeat++;
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Quantas voltas o carro dará na corrida?</p>
+    <input type="text" id="input_voltas">
+    <br>
+
+    <button onclick="iniciarCorrida();">Iniciar Corrida</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+</html>

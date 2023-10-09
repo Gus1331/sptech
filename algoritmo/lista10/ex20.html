@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex20</title>
+    <script>
+        function mostrarExtrato(){
+            var depositos = Number(input_depositos.value);
+            var valor = Number(input_valor.value);
+            var total;
+            var repeat = 1;
+
+            screendiv.innerHTML = ``;
+            while (repeat <= depositos){
+                total = valor * repeat
+                screendiv.innerHTML += `${repeat} º Mês: R$${total}.00 <br>`;
+                repeat++;
+            }
+            screendiv.innerHTML += `Total guardado: R$${total}.00 <br>`;
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Quantos depósitos fez no banco:</p>
+    <input type="text" id="input_depositos">
+    <br>
+
+    <p>Valor dos depósitos:</p>
+    <input type="text" id="input_valor">
+    <br>
+
+    <button onclick="mostrarExtrato();">Acompanhar grana</button>
+    <br>
+
+    <div id="screendiv"></div>
+
+
+</body>
+</html>

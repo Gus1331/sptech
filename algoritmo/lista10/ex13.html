@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex13</title>
+    <script>
+        function exibirRotina(){
+            var dias = Number(input_dias.value);
+            var repeat = 0;
+
+            screendiv.innerHTML = ``;
+            while (repeat <= 29){
+                if ((repeat % dias) == 0 || repeat == 0){
+                    screendiv.innerHTML += `Dia ${repeat + 1} - Musculação<br>`;
+                }
+                else{
+                    screendiv.innerHTML += `Dia ${repeat + 1} - Comer, dormir etc <br>`;
+                }
+                repeat++
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Intervalo em dias dos dias que pratica musculasção:</p>
+    <input type="text" id="input_dias">
+    <br>
+
+    <button onclick="exibirRotina();">Exibir Rotina</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+</html>

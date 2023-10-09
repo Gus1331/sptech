@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex10</title>
+    <script>
+        function mostrarPares(){
+            var n1 = Number(input_n1.value);
+            var n2 = Number(input_n2.value);
+            screendiv.innerHTML = ``;
+            
+            while (n1 <= n2){
+                if((n1%2) == 0){
+                    screendiv.innerHTML += `${n1}<br>`;
+                }
+                n1++;
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Coloque um valor Crescente numérico</p>
+    <p>
+        Numero 1:
+        <input type="text" id="input_n1">
+        Numero 2:
+        <input type="text" id="input_n2">
+    </p>
+
+    <button onclick="mostrarPares();">S2 Pares</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+</html>

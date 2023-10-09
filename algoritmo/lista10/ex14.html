@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex14</title>
+    <script>
+        function descrever(){
+            var idade = Number(input_idade.value);
+            var repeat = 1;
+            
+            screendiv.innerHTML = ``;
+            while (repeat <= idade){
+                if(repeat <= 4){
+                    screendiv.innerHTML += `${repeat} anos (Primeira Infância)<br>`;
+                }
+                else if (repeat <= 6){
+                    screendiv.innerHTML += `${repeat} anos (Pré-escolar:)<br>`;
+                }
+                else if (repeat <= 10){
+                    screendiv.innerHTML += `${repeat} anos (Segunda Infância)<br>`;
+                }
+                else if (repeat <= 18){
+                    screendiv.innerHTML += `${repeat} anos (Adolescência)<br>`;
+                }
+                else if (repeat <= 50){
+                    screendiv.innerHTML += `${repeat} anos (Adulto)<br>`;
+                }
+                else if (repeat <= 100){
+                    screendiv.innerHTML += `${repeat} anos (Melhor idade)<br>`;
+                }
+                else{
+                    screendiv.innerHTML += `${repeat} anos (Matusalém)<br>`;
+                }
+                repeat++;
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Sua idade:</p>
+    <input type="text" id="input_idade" onkeyup="descrever();">
+    <br>
+
+    <br>
+    <div id="screendiv"></div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex12</title>
+    <script>
+        function mostrarTabuada() {
+            var numero = Number(input_numero.value);
+            var repeat = 1;
+
+            screendiv.innerHTML = ``;
+            if (numero >= 2 && numero <= 9) {
+
+                while (repeat <= 12) {
+                    if (numero % 2 == 0) {
+                        screendiv.innerHTML += `${numero} * ${repeat} = ${numero * repeat}<br>`;
+                        screendiv.style.color = `blue`;
+                    }
+                    else {
+                        screendiv.innerHTML += `${numero} * ${repeat} = ${numero * repeat}<br>`;
+                        screendiv.style.color = `red`;
+                    }
+                    repeat++;
+                }
+            }
+            else {
+                screendiv.innerHTML = `numero inválido!`;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+    <p>Tabuada desejada:
+        <select name="numero" id="input_numero">
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+        </select>
+    </p>
+    <br>
+    <br>
+
+    <button onclick="mostrarTabuada();">Ver Tabuada</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+
+</html>

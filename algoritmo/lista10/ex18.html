@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex18</title>
+    <style>
+        img{
+            width: 75px;
+            display: inline-block;
+        }
+    </style>
+    <script>
+        function mostrarCocas(){
+            var cocas = Number(input_cocas.value);
+            var repeat = 1;
+            
+            screendiv.innerHTML = ``;
+            while (repeat <= cocas){
+                screendiv.innerHTML += `<img src="https://assets.stickpng.com/thumbs/580b57fbd9996e24bc43c0de.png" alt="coca-cola">`;
+                repeat++;
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Quantas coca-cola já tomou na vida:</p>
+    <input type="text" id="input_cocas">
+    <br>
+
+    <button onclick="mostrarCocas();">Ver a quantidade</button>
+    <br>
+
+    <div id="screendiv">
+        <img src="https://assets.stickpng.com/thumbs/580b57fbd9996e24bc43c0de.png" alt="coca-cola">
+    </div>
+    
+</body>
+</html>

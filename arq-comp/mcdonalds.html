@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McDonald's (faz mal)</title>
+    <script>
+        function checkStatus(){
+            var a = Number(input_a.value);
+            var b = Number(input_b.value);
+            var c = Number(input_c.value);
+            var d = Number(input_d.value);
+            var s;
+            console.log(`${a} ${b} ${c} ${d} = ${s}`);
+
+            // S = (!A*!B*C*!D) + (!A*!B*C*D) + (!A*B*C*D) + (A*!B*C*D) + (A*B*C*D)
+            s = 
+                (neg(a) * neg(b) * c * neg(d)) +
+                (neg(a) * neg(b) * c * d) + 
+                (neg(a) * b * c * d) + 
+                (a * neg(b) * c * d) +
+                (a * b * c * d)
+            ;
+            
+
+            if (s == 0){
+                result.innerHTML = `<span class="red">False</span>`;
+            }
+            else{
+                result.innerHTML = `<span class="blue">True</span>`;
+            }
+            
+            console.log(`${a} ${b} ${c} ${d} = ${s}`);
+            console.log(``);
+        }
+        function neg(n){ //retorna valor negado EX: 0 => 1, 1 => 0
+            return (n - 1) * -1; 
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Gustavo Oliveira de Souza 1ADS<span class="blue">A</span></h1>
+    <hr>
+    <table>
+        <tr>
+            <th>Está chovendo</th>
+            <th>Tenho dinheiro</th>
+            <th>Tenho tempo</th>
+            <th>Gosto de nuggets</th>
+            <th>McDonnald’s</th>
+        </tr>
+        <tr>
+            <td>
+                <select id="input_a" onclick="checkStatus();">
+                    <option value="0">False</option>
+                    <option value="1">True</option>
+                </select>
+            </td>
+            <td>
+                <select id="input_b" onclick="checkStatus();">
+                    <option value="0">False</option>
+                    <option value="1">True</option>
+                </select>
+            </td>
+            <td>
+                <select id="input_c" onclick="checkStatus();">
+                    <option value="0">False</option>
+                    <option value="1">True</option>
+                </select>
+            </td>
+            <td>
+                <select id="input_d" onclick="checkStatus();">
+                    <option value="0">False</option>
+                    <option value="1">True</option>
+                </select>
+            </td>
+            <td id="result"><span class="red">False</span></td>
+        </tr>
+    </table>
+</body>
+
+</html>
+<style>
+    *{
+        border-collapse: collapse;
+    }
+    body{
+        background-color: #d5cdd8;
+        font-family: monospace;
+    }
+    td, th{
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+        width: 160px;
+        background-color: white;
+        font-weight: bold;
+    }
+    th{
+        font-size: 1.3em;
+    }
+    table{
+        margin: 100px auto;
+    }
+    .red{
+        color: red;
+    }
+    .blue{
+        color: blue;
+    }
+</style>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex07</title>
+    <script>
+        function multiplos5() {
+            var num = Number(input_number.value);
+            if (num < 20 || num > 100) {
+                screendiv.innerHTML = `Numero deve ser maior ou igual que 20 e menor ou igual que 100!!!`;
+            }
+            else {
+                screendiv.innerHTML = ``;
+                var repeat = 0;
+                while (repeat < num) {
+                    screendiv.innerHTML += repeat + `<br>`;
+                    repeat += 5;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+    <p>Digite um numero ente 20 e 100:</p>
+    <input type="number" id="input_number">
+    <br>
+    <button onclick="multiplos5();">Adoro múltiplos de 5</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+
+</html>

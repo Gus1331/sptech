@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex19</title>
+    <style>
+        img{
+            width: 75px;
+            display: inline-block;
+        }
+    </style>
+    <script>
+        function mostrarCafes(){
+            var cafes = Number(input_cafes.value);
+            var repeat = 1;
+
+            screendiv.innerHTML = ``;
+
+            while (repeat <= cafes){
+                screendiv.innerHTML += `<img src="https://minhasaude.proteste.org.br/wp-content/uploads/2023/06/colher-carregando-punhado-de-leite-em-po-sobre-fundo-branco.jpg" alt="cuie lt em pó">`;
+                repeat++;
+            }
+
+            screendiv.innerHTML += `<br>`;
+
+            repeat = 1;
+
+            while (repeat <= (cafes * 2)){
+                screendiv.innerHTML += `<img src="https://media.istockphoto.com/id/530873179/es/foto/spoonfull-de-caf%C3%A9.jpg?s=1024x1024&w=is&k=20&c=5z1Wa_m4TbMxojB_MkkH9e8hG1a8y9snDuB_74cu3U8=" alt="cuie cafe em pó">`;
+                repeat++;
+            }
+            
+            //Forma 2
+            // while (repeat <= cafes) {
+            //     var i = 1;
+            //     screendiv.innerHTML += `<img src="https://minhasaude.proteste.org.br/wp-content/uploads/2023/06/colher-carregando-punhado-de-leite-em-po-sobre-fundo-branco.jpg" alt="cuie lt em pó">`;
+
+            //     while (i <= 2){
+            //         screendiv.innerHTML += `<img src="https://media.istockphoto.com/id/530873179/es/foto/spoonfull-de-caf%C3%A9.jpg?s=1024x1024&w=is&k=20&c=5z1Wa_m4TbMxojB_MkkH9e8hG1a8y9snDuB_74cu3U8=" alt="cuie cafe em pó">`;
+            //         i++
+            //     }
+            //     screendiv.innerHTML += `<br>`;
+            //     repeat++;
+            // }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Quantas xícaras de café já tomou na vida:</p>
+    <input type="text" id="input_cafes">
+    <br>
+
+    <button onclick="mostrarCafes();">Ver a quantidade</button>
+    <br>
+
+    <div id="screendiv">
+        <img src="https://minhasaude.proteste.org.br/wp-content/uploads/2023/06/colher-carregando-punhado-de-leite-em-po-sobre-fundo-branco.jpg" alt="cuie lt em pó">
+        <img src="https://media.istockphoto.com/id/530873179/es/foto/spoonfull-de-caf%C3%A9.jpg?s=1024x1024&w=is&k=20&c=5z1Wa_m4TbMxojB_MkkH9e8hG1a8y9snDuB_74cu3U8=" alt="cuie cafe em pó">
+    </div>
+    
+</body>
+</html>

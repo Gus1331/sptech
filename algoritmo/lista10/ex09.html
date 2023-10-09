@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex09</title>
+    <script>
+        function papagaio(){
+            var num = Number(input_numero.value);
+            var frase = input_frase.value
+            var repeat = 1;
+            screendiv.innerHTML = ``;
+
+            while (repeat <= num){
+                alert(frase);
+                repeat++;
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+    <p>Informe um número:</p>
+    <input type="text" id="input_numero">
+    <br>
+    <p>Informe uma frase:</p>
+    <input type="text" id="input_frase">
+    <br>
+    <button onclick="papagaio();">Papagaio</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+</html>

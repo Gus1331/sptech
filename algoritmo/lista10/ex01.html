@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex01</title> 
+    <script>
+        function contar(){
+            screendiv.innerHTML = ``;
+            var repeat = 1;
+
+            while (repeat <= 15){
+                screendiv.innerHTML += `${repeat}<br>`;
+                repeat++;
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+    <button onclick="contar();">Contar</button>
+    <div id="screendiv"></div>
+</body>
+</html>

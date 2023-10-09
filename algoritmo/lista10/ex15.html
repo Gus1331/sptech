@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex15</title>
+    <script>
+        function atazanar() {
+            var elefantes = Number(input_elefantes.value);
+            var repeat = 1;
+
+            screendiv.innerHTML = ``;
+            while (repeat <= elefantes) {
+                var i = 1;
+                if(repeat != 1 && repeat != 2){
+                    screendiv.innerHTML += `1 elefante incomoda muita gente!<br>`;
+                    screendiv.innerHTML += `${repeat} elefantes`;
+                    while (i <= repeat) {
+                        screendiv.innerHTML += ` incomodam,`;
+                        i++;
+                    }
+                    screendiv.innerHTML += ` muito mais!<br>`;
+                }
+                else{
+                    if(repeat == 1){
+                        screendiv.innerHTML += `1 elefante incomoda muita gente!<br>`;
+                    }
+                    else{                       
+                        screendiv.innerHTML += `${repeat} elefantes incomodam, incomodam, muito mais!<br>`;
+                    }
+                }
+                repeat++;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Quantidade de elefantes:</p>
+    <input type="text" id="input_elefantes">
+    <br>
+
+    <br>
+    <button onclick="atazanar();">Atazanar a médium!</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+
+</html>
