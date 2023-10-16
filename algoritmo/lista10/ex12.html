@@ -9,19 +9,21 @@
         function mostrarTabuada() {
             var numero = Number(input_numero.value);
             var repeat = 1;
-
+            
             screendiv.innerHTML = ``;
             if (numero >= 2 && numero <= 9) {
-
+                
                 while (repeat <= 12) {
-                    if (numero % 2 == 0) {
-                        screendiv.innerHTML += `${numero} * ${repeat} = ${numero * repeat}<br>`;
-                        screendiv.style.color = `blue`;
+                    var color = `blue`;
+                            
+                    if (repeat % 2 == 0) {
+                        screendiv.innerHTML += `<span style="color: ${color};">${numero} * ${repeat} = ${numero * repeat}</span><br>`;
                     }
                     else {
-                        screendiv.innerHTML += `${numero} * ${repeat} = ${numero * repeat}<br>`;
-                        screendiv.style.color = `red`;
+                        var color = "red"
+                        screendiv.innerHTML += `<span style="color:${color};">${numero} * ${repeat} = ${numero * repeat}</span><br>`;
                     }
+
                     repeat++;
                 }
             }

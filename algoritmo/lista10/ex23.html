@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex23</title>
+    <script>
+        function contar() {
+            var inferior = Number(input_inferior.value);
+            var superior = Number(input_superior.value);
+            var num = Number(input_num.value);
+            var qtdNum = 0;
+            var somNum = 0;
+            var maiorNum;
+            var menorNum;
+
+            if (inferior > 1 && superior < 100 && superior > inferior) {
+                screendiv.innerHTML = ``;
+                while (inferior <= superior) {
+                    if (inferior % num == 0) {
+                        screendiv.innerHTML += ` ${inferior},`;
+
+                        if(menorNum == undefined){
+                            menorNum = inferior
+                        }
+                        maiorNum = inferior;
+                        somNum += inferior;
+                        qtdNum++;
+                    }
+                    inferior++;
+                }
+                screendiv.innerHTML += `<br>QUANTIDADE TOTAL DE NÚMEROS EXIBIDOS: ${qtdNum}<br>SOMATÓRIO DOS NÚMEROS EXIBIDOS:${somNum}<br>MÉDIA DOS NÚMEROS EXIBIDOS:${somNum / qtdNum}<br>MAIOR NÚMERO EXIBIDO:${maiorNum}<br> MENOR NÚMERO EXIBIDO:${menorNum}`;
+            }
+            else{
+                screendiv.innerHTML = `Alguma regra foi infringida!<br>O numero inferior deve ser maior que 1;<br>O numero superior deve ser menor que 100 e ser maior que o inferior!`;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Declare o numero inferior:</p>
+    <input type="text" id="input_inferior">
+    <br>
+
+    <p>Declare o numero superior:</p>
+    <input type="text" id="input_superior">
+    <br>
+
+    <p>Numero a ser mostrado os divisores:</p>
+    <input type="text" id="input_num">
+    <br>
+
+    <button onclick="contar();">Contar</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+
+</html>

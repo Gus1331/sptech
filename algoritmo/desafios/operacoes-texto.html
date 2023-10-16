@@ -1,15 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>textos</title>
     <script>
         function analisarTextos() {
             var frase = input_frase.value;
 
+            span_qtd_letras.innerHTML = frase.length;
+            span_comeca_e.innerHTML = frase.startsWith("e");
+            span_comeca_a.innerHTML = frase.startsWith("a");
+            span_termina_com.innerHTML = frase.endsWith(".com");
+            span_termina_e.innerHTML = frase.endsWith("e");
+            span_termina_arroba.innerHTML = frase.endsWith("@");
+            span_primeira_letra.innerHTML = frase[0];
+            span_terceira_letra.innerHTML = frase[2];
+            span_ultima_letra.innerHTML = frase[frase.length -1];
+            span_primeira_arroba.innerHTML = frase.indexOf("@");
+            span_indice_abc.innerHTML = frase.indexOf("abc");
+            span_maiusculo.innerHTML = frase.toUpperCase();
+            span_minusculo.innerHTML = frase.toLowerCase();
+            span_frase_original.innerHTML = frase;
             span_arroba_no_a.innerHTML = frase.replace("a", "@")
             span_sem_espacos.innerHTML = frase.replaceAll(" ", "")
             span_numeros.innerHTML = frase.replaceAll("a", "4")

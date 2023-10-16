@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex21</title>
+    <script>
+        function mostrarExtrato(){
+            var depositos = Number(input_depositos.value);
+            var valor = Number(input_valor.value);
+            var total;
+            var bonus = 0;
+            var bonusImg = ``;
+            var repeat = 1;
+
+            screendiv.innerHTML = ``;
+            while (repeat <= depositos){
+                console.log(total)
+                
+                if (repeat % 3 == 0){
+                    total = valor * repeat;
+                    bonus += total * 0.01;
+                    total += bonus;
+                    bonusImg = `<img style="height: 1em;" src="https://static.wikia.nocookie.net/supermarioglitchy4/images/b/b6/8ED4E41C-F0F1-49FA-9AC7-08FC9EE5F755.png/revision/latest/scale-to-width-down/1200?cb=20200209125017" alt="estrela">`;
+                }
+                else{
+                    bonusImg = ``;
+                    total = valor * repeat;
+                }
+                screendiv.innerHTML += `${repeat} º Mês: R$${total}.00 ${bonusImg} <br>`;
+                repeat++;
+                console.log(total)
+            }
+            screendiv.innerHTML += `Total guardado: R$${total}.00 <br>`;
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Quantos depósitos fez no banco:</p>
+    <input type="text" id="input_depositos">
+    <br>
+
+    <p>Valor dos depósitos:</p>
+    <input type="text" id="input_valor">
+    <br>
+
+    <button onclick="mostrarExtrato();">Acompanhar grana</button>
+    <br>
+
+    <div id="screendiv"></div>
+
+
+
+</body>
+</html>
