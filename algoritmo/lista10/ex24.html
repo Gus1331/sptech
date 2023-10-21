@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex24</title>
+    <script>
+        function divisores() {
+            var numero = Number(input_num.value);
+            var divisor = 0
+
+            if (numero >= 0 || numero <= 100) {
+                screendiv.innerHTML = ``;
+                while (divisor <= numero) {
+                    if (numero % divisor == 0) {
+                        screendiv.innerHTML += `${divisor}<br>`;
+                    }
+                    divisor++;
+                }
+            }
+            else{
+                screendiv.innerHTML = `Número Inválido`;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Insira um número entre 0 e 100:</p>
+    <input type="text" id="input_num">
+    <br>
+
+    <button onclick="divisores();">Ver divisores</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+
+</html>

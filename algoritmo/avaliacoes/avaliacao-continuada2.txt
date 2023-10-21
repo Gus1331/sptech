@@ -1,0 +1,91 @@
+Orientações da Prova
+
+- A prova é individual e com consulta (sites de programação / material do moodle) - consulta à geradores de código (inteligência artificial) e/ou colegas (internos ou externos) será considerada cola.
+
+- A prova tem duração de 120 minutos (2:00h), então não deixe para o último minuto, faça quantos upload forem necessários, pois quando o Moodle fechar não haverá outra alternativa.
+
+- Se forem usadas tags HTML, técnicas de CSS ou instruções JS que não foram ensinadas nem em algoritmos nem em PI o aluno terá desconto de nota - a cargo do tamanho da infração.
+
+- Leia o enunciado com atenção.
+
+- Resolva somente em 1 (um) arquivo .html. Não crie outros arquivos (nem coloque o arquivo dentro de pasta). O moodle só aceitará 1 (um) arquivo e do tipo html.
+
+
+
+Questão Única:
+Naruto é um jovem ninja que sonha em se tornar Hokage, o líder de sua vila. Ele tem o poder de criar vários clones de sí mesmo, e cada vez que faz isso consome uma certa quantidade de "Chakra" (força vital dos ninjas).
+
+Faça um programa que otimize a criação dos clones do Naruto sabendo que cada clone criado consome 20 pontos de seu Chakra. 
+
+a) Receba a quantidade de pontos de “Chakra” que o Naruto tem;
+
+b) Receba a quantidade de clones desejada;
+
+c) Receba a quantidade de clones por linha;
+
+d) Quando o botão “Criar clones” for clicado:
+
+    d.1) Validar os campos de entrada da seguinte forma:
+
+        I. O Chakra do item a) tem que estar entre 20 e 5.000;
+
+        II. A quantidade de clones do item b) tem que estar entre 0 e 250;
+
+        III. A quantidade de clones por linha do item c) tem que ser maior que 0;
+
+        IV. Em caso de qualquer erro testado acima, emita um alerta com a mensagem abaixo e não faça mais nada: 
+
+            “ERRO NA ENTRADA DE DADOS – Energia tem que ser entre 20 e 5.000. Quantidade de Clones tem que ser entre 0 e 250. Quantidade de Clones por linha tem que ser maior que 0”.
+
+    d.2) Caso tenha passado em todas as validações anteriores, valide se o “Chakra” do item a) é suficiente para criar a quantidade de clones do item b) desejada, ou seja, o item a) tem que ser maior ou igual ao item b) multiplicado por 20. Caso contrário, emita um alerta com uma mensagem explicando o erro e não faça mais nada.
+
+    d.3) Abaixo do botão, mostre todos os clones do Naruto, sendo que em cada linha terá somente a quantidade de clones informada no item c). As imagens devem ter 100px de largura.
+
+    OBS: Para criar os clones do Naruto, copie (clicando com o botão direito do mouse) a imagem abaixo e deixe-a no mesmo local (diretório) que está o seu programa JS/HTML.
+
+    OBS²: Muito importante: deixe a imagem com o mesmo nome que baixou.
+
+
+
+
+
+e) Abaixo das imagens exibidas (sem apagá-las), emita o seguinte:
+
+    ANÁLISE DA GERAÇÃO DE CLONES
+
+    Chakra Inicial: 99999  
+
+    Quantidade de Clones: 999
+
+    Sobra de Chakra: 99999
+
+    OBS: 
+
+        I. "Chakra Inicial" é o valor recebido no item a);
+
+        II. "Quantidade de Clones" é o valor recebido no item b);
+
+        III. "Sobra de Chakra" é o Chakra Inicial menos a Quantidade de Clones * 20:   item a)  –  item b)  *  20.
+
+
+
+f) Abaixo do item anterior, exiba uma das mensagens abaixo:
+
+    “PROVAVELMENTE VOCÊ VAI GANHAR”: Caso a Sobra de Chakra seja maior que 1000 ou então a Quantidade de Clones for maior que 50 e o percentual de sobra for maior ou igual a 20%.
+
+    “A LUTA VAI SER MUITO BOA”: Caso a Sobra de Chakra seja maior que 500 ou então a Quantidade de Clones esteja entre 20 e 50 e o percentual de sobra for maior ou igual  a 10%.
+
+    Caso contrário, se nenhuma das mensagens anteriores for exibida, exiba: “TORÇA PARA O ADVERSÁRIO SER FRAQUINHO".
+
+OBS: Para obter o percentual de sobra basta dividir "Sobra de Chakra" por "Chakra Inicial" e multiplicar por 100.
+
+
+Exemplos de saída:
+
+
+
+
+
+
+
+

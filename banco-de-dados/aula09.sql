@@ -21,8 +21,8 @@
 CREATE DATABASE convenio;
 USE convenio;
 
-CREATE TABLE funcionario
-	(idFunc INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE funcionario(
+    idFunc INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(45), -- + sobrenome = atributo composto
     sobrenome VARCHAR(45),
     emailP VARCHAR(45), -- + emailS = atributo multivalorado

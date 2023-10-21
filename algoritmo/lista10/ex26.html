@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex26</title>
+    <script>
+        function somarPares() {
+            var numero = Number(input_num.value);
+            var somaPares = 0;
+            var repeat = 1;
+            
+            screendiv.innerHTML = ``;
+            if (numero >= 10 && numero <= 500) {
+                while (repeat <= numero) {
+                    if(repeat % 2 == 0){
+                        screendiv.innerHTML += `${repeat} - `;
+                        somaPares += repeat;
+                    }
+                    repeat++;
+                }
+                screendiv.innerHTML += `<br>Soma dos pares: ${somaPares}`;
+            }
+            else {
+                alert(`critérios não atendidos!`);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Insira um número entre 10 e 500</p>
+    <input type="text" id="input_num">
+    <br>
+
+    <button onclick="somarPares();">Somar Pares</button>
+    <br>
+
+    <div id="screendiv"></div>
+
+</body>
+
+</html>

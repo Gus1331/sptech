@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex27</title>
+    <script>
+        function somarNumeros(){
+            var numero1 = Number(input_num1.value);
+            var numero2 = Number(input_num2.value);
+            var somaNumeros = 0;
+            var repeat = 1;
+
+            screendiv.innerHTML = ``;
+            while (repeat <= numero1){
+                if(repeat % numero2 == 0){
+                    screendiv.innerHTML += `${repeat} - `;
+                    somaNumeros += repeat;
+                }
+                repeat++;
+            }
+            screendiv.innerHTML += `<br> Soma dos Múltiplos: ${somaNumeros} `;
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Insira um número positivo:</p>
+    <input type="text" id="input_num1">
+    <br>
+    
+    <p>Insira mais um número positivo e menor que o anterior:</p>
+    <input type="text" id="input_num2">
+    <br>
+
+    <button onclick="somarNumeros();">Somar Numeros</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+</html>

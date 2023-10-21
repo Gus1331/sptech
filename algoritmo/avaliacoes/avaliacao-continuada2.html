@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuada 2</title>
+    <style>
+        img {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Criação de Clones do Naruto</h1>
+    <p>
+        Quantidade de Chakra:
+        <input type="number" id="input_chakra">
+    </p>
+
+    <p>
+        Quantidade de clones desejada:
+        <input type="number" id="input_clones">
+    </p>
+
+    <p>
+        Quantidade de clones por linha:
+        <input type="number" id="input_clonesLinha">
+    </p>
+
+    <button onclick="criarClones();">Criar Clones</button>
+
+    <div id="batalha"></div>
+
+    <script>
+        function criarClones() {
+            var chakraInicial = Number(input_chakra.value);
+            var chakraAtual = chakraInicial;
+            var clones = Number(input_clones.value);
+            var clonesLinha = Number(input_clonesLinha.value);
+            var numeroClones = 0; // Atuais
+
+
+            batalha.innerHTML = ``;
+
+            if (chakraInicial >= 20 && chakraInicial <= 5000
+                &&
+                clones >= 0 && clones <= 250
+                &&
+                clonesLinha > 0) { // Primeira validação (Inputs corretos)
+
+                if (chakraInicial >= (clones * 20)) { // Segunda validação (Valores combinam com enunciado)
+
+                    while (numeroClones < clones) { // ciclo da criação de clones
+                        numeroClones++; // =+ 1 // clone criado
+                        chakraAtual -= 20; // chakra drenado por clone
+
+                        batalha.innerHTML += `<img src="https://i.pinimg.com/236x/77/7f/73/777f732dbc7b96a6b570a0b3fe20e3e7.jpg">`; // clone no campo de batalha!
+
+                        if (numeroClones % clonesLinha == 0) { // quebra de linha
+                            batalha.innerHTML += `<br>`;
+                        }
+                    }
+
+                    // Análise da geração
+                    batalha.innerHTML += `<br><strong>ANÁLISE DA GERAÇÃO DE CLONES</strong><br>
+                    Chakra Inicial: ${chakraInicial}  <br>
+                    Quantidade de Clones: ${clones} <br>
+                    Sobra de Chakra: ${chakraAtual} <br>`;
+
+                    // Cálculo da porncentagem de sobra do chakra
+                    var porcentagemSobraChakra = (chakraAtual / chakraInicial) * 100;
+
+
+                    // Mensagem extra
+                    if(chakraAtual > 1000 || (clones > 50 && porcentagemSobraChakra >= 20)) {
+                        batalha.innerHTML += `PROVAVELMENTE VOCÊ VAI GANHAR`;
+                    }
+                    else if (chakraAtual > 500 || (clones >= 20 && clones <= 50) || porcentagemSobraChakra >= 10){
+                        batalha.innerHTML += `A LUTA VAI SER MUITO BOA`;
+                    }
+                    else{
+                        batalha.innerHTML += `TORÇA PARA O ADVERSÁRIO SER FRAQUINHO`;
+                    }
+
+                }
+                else {
+                    alert(`Chakra insuficente para a quantidade de clones!`);
+                }
+            }
+            else {
+                alert(`ERRO NA ENTRADA DE DADOS - 
+                Energia tem que ser entre 20 e 5.000. 
+                Quantidade de Clones tem que ser entre 0 e 250. 
+                Quantidade de Clones por linha tem que ser maior que 0`);
+            }
+        }
+    </script>
+</body>
+
+</html>
