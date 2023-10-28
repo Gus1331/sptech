@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex01</title>
+    <script>
+        var listaFrutas = ["uva",
+            "maçã",
+            "banana",
+            "pêssego",
+            "caju",
+            "melancia",
+            "laranja",
+            "mamão",
+            "kiwi",
+            "pera",
+            "melão",
+            "tomate",
+            "caqui"
+        ]
+
+        function pesquisarFruta(){
+            var fruta = input_fruta.value.toLowerCase();
+
+            for(var i = 0; i <= listaFrutas.length; i++){
+
+                if((listaFrutas[i]) == fruta){
+                    screendiv.innerHTML = `A fruta ${fruta} existe na lista.`
+                    break;
+                    console.log(true)
+                }
+                else{
+                    screendiv.innerHTML = `Não existe a fruta ${fruta} na lista.`
+                    console.log(false)
+                }
+
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Pesquisar Fruta:</p>
+    <input type="text" id="input_fruta">
+    <br>
+
+    <button onclick="pesquisarFruta()">Pesquisar</button>
+    <br>
+
+    <div id="screendiv"></div>
+
+</body>
+
+</html>

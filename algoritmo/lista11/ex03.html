@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex03</title>
+    <script>
+        var bairros = [undefined];
+
+        function cadastrarBairro() {
+            var bairro = input_bairro.value;
+
+            bairros.push(bairro);
+        }
+
+        function relembrar() {
+            var i = input_index.value;
+
+            if (i > (bairros.length - 1)) {
+                screendiv.innerHTML = `Você ainda não morou num ${i}º bairro!`;
+            }
+            else {
+                screendiv.innerHTML = bairros[i];
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Bairros que já morou:</p>
+    <input type="text" id="input_bairro">
+    <button onclick="cadastrarBairro();">Cadastrar Bairro</button>
+    <br>
+
+    <p>Moradia numero <input type="number" id="input_index">
+        <button onclick="relembrar();">Relembrar moradia</button>
+    </p>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+
+</html>

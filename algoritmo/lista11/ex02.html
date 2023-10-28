@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02</title>
+    <script>
+        var listaDestino = []; // asume se que o ultimo desta lista não foi viajado, assim todos anteriores dele foram
+
+
+        function adicionarDestino() {
+            var destino = input_destino.value;
+            listaDestino.push(destino);
+        }
+
+        function primeiraViagem() {
+            if (listaDestino.length > 0) {
+                screendiv.innerHTML = listaDestino[0];
+            }
+            else {
+                screendiv.innerHTML = `Ainda não viajou`;
+            }
+        }
+
+        function terceiraViagem() {
+            if (listaDestino.length > 3) {
+                screendiv.innerHTML = listaDestino[2];
+            }
+            else {
+                screendiv.innerHTML = `Ainda não viajou`;
+            }
+        }
+
+        function ultimaViagem(){
+            if (listaDestino.length > 0) {
+                screendiv.innerHTML = listaDestino[listaDestino.length - 2];
+            }
+            else {
+                screendiv.innerHTML = `Ainda não viajou`;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Destino de viagem:</p>
+    <input type="text" id="input_destino">
+    <br>
+
+    <button onclick="adicionarDestino();">Adicionar</button>
+    <br>
+
+    <br>
+    <button onclick="primeiraViagem();">Primeira Viagem</button>
+    <button onclick="terceiraViagem();">Terceira Viagem</button>
+    <button onclick="ultimaViagem();">Ultima Viagem</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+
+</html>

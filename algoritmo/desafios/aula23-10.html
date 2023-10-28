@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiosque</title>
+    <script>
+        var estoqueAgua = 0;
+        var estoqueFrutaCoco = 0;
+        
+        function validarValores() {
+            var agua = Number(input_agua.value);
+            var frutaCoco = Number(input_fruta_coco.value);
+            screendiv.innerHTML = ``;
+
+            if (agua < 100) {
+                alert(`Com essa quantidade de Água engarrafada não dá para abrir o quiosque`);
+            }
+            else if (frutaCoco < 200) {
+                alert(`Com essa quantidade de Coco fechado não dá para abrir o quiosque`);
+            }
+            else{
+
+                    estoqueAgua = agua;
+                    estoqueFrutaCoco = frutaCoco;
+                    screendiv.innerHTML += `<h2>--------------------- Estoque Inicial ---------------------</h2>
+                    <ul>
+                        <li>Água engarrafada: <bold>${estoqueAgua}</bold>
+                            <li>Coco fechado: <bold>${estoqueFrutaCoco}</bold>
+                                </ul>`
+                                
+                    screendiv.innerHTML += `<h2>--------------------- Registro das Operações de venda ---------------------</h2>
+                        <p>Entre com a quantidade vendida:
+                            <input type="text" id="input_qtd_vendido">
+                            informe o produto vendido:
+                        <select id="select_produto_vendido">
+                            <option value="0">Água Engarrafada</option>
+                            <option value="1">Coco fechado</option>
+                        </select>
+                        <button onclick="registrarVenda();">Registrar Venda</button>
+                        <button onclick="encerrarTurno();">Encerrar o Turno</button>
+                    </p>`
+
+                    if ( agua <= 1000){screendiv.innerHTML += `Engarrafe mais água de coco<br>`;}
+                    if (frutaCoco <= 2000){screendiv.innerHTML += `Compre mais cocos<br>`;}
+
+            }
+        }
+
+        function registrarVenda(){
+            var qtdVendido = Number(input_qtd_vendido.value);
+            var produtoVendido = Number(select_produto_vendido.value);
+            var estoque;
+
+            if( produtoVendido == 0){
+                estoqueAgua -= qtdVendido;
+                estoque = estoqueAgua;
+                produtoVendido = `Água Engarrafada`;
+            }
+            else if (produtoVendido == 1){
+                estoqueFrutaCoco -= qtdVendido
+                estoque = estoqueFrutaCoco;
+                produtoVendido = `Coco Fechado`;
+            }
+            screendiv.innerHTML += `Com a venda de ${qtdVendido} de ${produtoVendido} o saldo no estoque é de ${estoque}<br>`;
+        }
+        
+        function encerrarTurno(){
+            screendiv.innerHTML = `<h2>Vendas de Água engarrafada</h2>
+                Saldo de produto no estoque: XXXX 
+
+                Quantidade de vendas: YYYY
+
+                Porcentagem das vendas: ZZZZ
+
+                <h2>Vendas de Coco fechado</h2>
+                Saldo de produto no estoque: XXXX 
+
+                Quantidade de vendas: YYYY
+
+                Porcentagem das vendas: ZZZZ
+            `;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Quiosque do Fábio</h1>
+    <hr>
+
+    <h2>--------------------- Abertura do Quiosque ---------------------</h2>
+    <p>Quantidade de água engarrafada:</p>
+    <input type="text" id="input_agua">
+    <br>
+
+    <p>Quantidade de coco fechado:</p>
+    <input type="text" id="input_fruta_coco">
+    <br>
+
+    <br>
+    <button onclick="validarValores();">Abrir o quiosque</button>
+    <br>
+    
+    <br>
+    <div id="screendiv"></div>
+
+
+</body>
+
+</html>
