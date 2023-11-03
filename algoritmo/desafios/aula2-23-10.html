@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA</title>
+    <style>
+        #screendiv>div {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 1px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .green {
+            background-color: lime;
+        }
+    </style>
+    <script>
+        var timeA = 0;
+        var timeB = 0;
+        var timeC = 0;
+
+        var rodadaAtual = 0
+        var valorPremiacao;
+
+        function realizarRodada() {
+            valorPremiacao = Number(input_premiacao.value);
+            var numRodadas = Number(input_rodadas.value);
+            screendiv.innerHTML = ``;
+
+
+            if (valorPremiacao < 1000 && numRodadas < 1) {
+                alert(`Dados inválidos para a rodada`);
+            }
+            else {
+                rodadaAtual++;
+                timeA += Number(select_resultado_a.value);
+                timeB += Number(select_resultado_b.value);
+                timeC += Number(select_resultado_c.value);
+
+                var timeApontos = gerarPontos(timeA,'red');
+                var timeBpontos = gerarPontos(timeB,'blue');
+                var timeCpontos = gerarPontos(timeC,'green');
+
+                
+                screendiv.innerHTML = `
+                Rodada Atual ${rodadaAtual}<br>
+                Time A: ${timeApontos}<br>
+                Time B: ${timeBpontos}<br>
+                Time C: ${timeCpontos}<br>
+                `;
+                if (rodadaAtual == numRodadas) {
+                    revelarPremiação();
+                }
+            }
+        }
+
+        function revelarPremiação() {
+            var total = timeA + timeB + timeC;
+            screendiv.innerHTML = `
+            Rodada Atual ${rodadaAtual}<br>
+            Time A: ${(((timeA * 100) / total) / 100) * valorPremiacao}<br>
+            Time B: ${(((timeB * 100) / total) / 100) * valorPremiacao}<br>
+            Time C: ${(((timeC * 100) / total) / 100) * valorPremiacao}<br>`;
+            
+        }
+        
+        function gerarPontos (n, color){
+            var pontos = '';
+            for(var i = 0; i < n; i++){
+                pontos += `<div class="${color}"></div>`
+            }
+            return pontos;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Premiação NBA</h1>
+
+    <p>Valor da premiação total: <input type="text" id="input_premiacao"></p>
+    <p>Número máximo de rodadas <input type="text" id="input_rodadas"></p>
+    <p>Resultado time A:
+        <select id="select_resultado_a">
+            <option value="3">Vitória</option>
+            <option value="1">Empate</option>
+            <option value="0">Derrota</option>
+        </select>
+    </p>
+    <p>Resultado time b:
+        <select id="select_resultado_b">
+            <option value="3">Vitória</option>
+            <option value="1">Empate</option>
+            <option value="0">Derrota</option>
+        </select>
+    </p>
+    <p>Resultado time c:
+        <select id="select_resultado_c">
+            <option value="3">Vitória</option>
+            <option value="1">Empate</option>
+            <option value="0">Derrota</option>
+        </select>
+    </p>
+    <button onclick="realizarRodada();">Realizar rodada</button>
+    <button onclick="revelarPremiação();">Revelar Premiação</button>
+    <br>
+
+    <br>
+    <div id="screendiv"></div>
+
+</body>
+
+</html>

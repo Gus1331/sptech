@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex13</title>
+    <script>
+        var historico = [];
+        function registrarJogo(){
+            historico.push(Number(select_combo.value));
+            alert(`Jogo registrado!`);
+
+            pesquisarJogo();
+        }
+
+        function pesquisarJogo() {
+            var pesquisa = Number(input_pesquisa.value);
+
+            if (pesquisa > historico.length || pesquisa <= 0){
+                screendiv.innerHTML = `Não foi cadastrado um <b>${pesquisa}º</b> jogo `;
+            }
+            else {
+                var resultado = `perdeu`
+
+                if(historico[pesquisa - 1] == 3){
+                    resultado = `ganhou`;
+                }
+                else if (historico[pesquisa - 1] == 1){
+                    resultado = `empatou`;
+                }
+
+                screendiv.innerHTML = `No <b>${pesquisa}º</b> jogo, o time ${resultado}`;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <select id="select_combo">
+        <option value="3">Vitória</option>
+        <option value="1">Empate</option>
+        <option value="0">Derrota</option>
+    </select>
+    <button onclick="registrarJogo();">Registrar jogo</button>
+    <br>
+
+    <p>Pesquisar resultado do jogo</p>
+    <input type="text" id="input_pesquisa" onkeyup="pesquisarJogo();">
+    <br>
+
+    <br>
+    <div id="screendiv"></div>
+</body>
+
+</html>

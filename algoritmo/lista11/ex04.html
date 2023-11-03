@@ -6,7 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ex04</title>
     <script>
-        
+        var filmes = [undefined];
+        function cadastrarFilme() {
+            filmes.push(input_filme.value);
+        }
+
+        function exibirFilmes() {
+            screendiv.innerHTML = ``;
+            for (var i = 1; i <= filmes.length - 1; i++) {
+                screendiv.innerHTML += `${i} - ${filmes[i]} . <br>`;
+            }
+            screendiv.innerHTML += `Total: ${filmes.length - 1}<br>
+            O que filme que mais gosta é ${filmes[1]}
+            <br> E desses, o que menos gosta é ${filmes[filmes.length - 1]}`;
+        }
     </script>
 </head>
 
@@ -19,8 +32,8 @@
     <br>
 
     <br>
-    <button onlclick="cadastrarFilme();">Cadastrar Filme</button>
-    <button onlclick="exibirFilmes();">Ver favoritos</button>
+    <button onclick="cadastrarFilme();">Cadastrar Filme</button>
+    <button onclick="exibirFilmes();">Ver favoritos</button>
     <br>
 
     <div id="screendiv"></div>

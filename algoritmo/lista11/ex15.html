@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex014</title>
+    <script>
+        var produtos = [];
+
+        function cadastrarProduto(){
+            var nome = input_nome.value;
+            var preco = Number(input_preco.value);
+            if(nome == ''|| preco == NaN){
+                alert(`falha no cadastro! alguns dados podem estar errados ou vazios!`)
+            }
+            else{
+                produtos.push(nome);
+                produtos.push(preco);
+            }
+        }
+
+        function relatorio(){
+            screendiv.innerHTML = `<h2>Total de produtos: ${produtos.length / 2}<br></h2>`;
+            var numeroLista = 1;
+            var maisCaro = [];
+            var maisBarato = [];
+            var somaPrecos = 0;
+            var mediaPrecos;
+
+
+            for(var i = 0; i<= produtos.length - 2; i += 2){
+                screendiv.innerHTML += `
+                <br>
+                <b>Produto ${numeroLista}: ${produtos[i]}</b><br>
+                Preço de compra: R$${(produtos[i + 1]).toFixed(2)}. Vender por R$${(produtos[i + 1] * 1.25).toFixed(2)}
+                <br>
+                `;
+                numeroLista++
+
+                if(produtos[i + 1] > maisCaro[1] || maisCaro[1] == undefined){
+                    maisCaro[0] = produtos[i];
+                    maisCaro[1] = produtos[i + 1];
+                }
+
+                if(produtos[i + 1] < maisBarato[1] || maisBarato[1] == undefined){
+                    maisBarato[0] = produtos[i];
+                    maisBarato[1] = produtos[i +1];
+                }
+
+                somaPrecos += produtos[i + 1];
+            }
+            
+            mediaPrecos = (somaPrecos * 1.25) / (produtos.length / 2)
+            screendiv.innerHTML += `<br><hr><br>
+            Produto mais caro: ${maisCaro[0]}<br>
+            Produto mais barato: ${maisBarato[0]}<br>
+            Soma dos preços de compra dos produtos: ${somaPrecos}<br>
+            Média dos preços de venda dos produtos: ${mediaPrecos}`
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Nome do produto: <input type="text" id="input_nome"></p>
+
+    <p>Preço de compra do produto: <input type="text" id="input_preco"></p>
+    
+    <button onclick="cadastrarProduto();">Cadastrar</button>
+    <br>
+
+    <br>
+    <button onclick="relatorio();">Relátorio de estoque</button>
+    <br>
+
+    <br>
+    <div id="screendiv"></div>
+</body>
+</html>

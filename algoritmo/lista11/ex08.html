@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex08</title>
+    <script>
+        var listaAlunos = [];
+        function cadastrarAluno(){
+            listaAlunos.push(input_aluno.value);
+            screendiv.innerHTML = ``;
+
+            for(var i = (listaAlunos.length - 1); i >= 0 ; i -= 1){
+                screendiv.innerHTML += `${listaAlunos[i]}<br>`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Nome do aluno:</p>
+    <input type="text" id="input_aluno">
+    <br>
+
+    <button onclick="cadastrarAluno();">Cadastrar</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex10</title>
+    <script>
+        var linhas = []
+        function gravarOnibus(){
+            linhas.push(input_onibus.value);
+            screendiv.innerHTML = ``;
+
+            for(var i = (linhas.length - 1); i >= 0; i -= 1){
+                screendiv.innerHTML += `${linhas[i]}<br>`;
+            }
+        }
+
+        function pesquisarLinha(){
+            var pesquisado = input_pesquisa.value;
+            var indexPesquisa = linhas.indexOf(input_pesquisa.value);
+            var qtd = 0
+            var posicoes = [];
+
+            if(indexPesquisa == -1){
+                screendiv.innerHTML = `Você nunca pegou essa linha`;
+            }
+            else{
+
+                for(var i = 0; i <= linhas.length -1; i++){
+                    if (pesquisado == linhas[i]){
+                        posicoes.push(i + 1);
+                        qtd++;
+                    }
+                }
+                screendiv.innerHTML = `Você já pegou essa linha ${qtd} vezes, nessa ordem:`;
+
+                for (var i = 0; i <= posicoes.length - 1; i++){
+                    if (i != posicoes.length-1){
+                        screendiv.innerHTML += `${posicoes[i]}, `;
+                    }
+                    else{
+                        screendiv.innerHTML += `${posicoes[i]}`;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Linhas de ônibus que pegou durante a semana:</p>
+    <input type="text" id="input_onibus">
+    <button onclick="gravarOnibus();">Gravar Busão</button>
+    <br>
+
+    <p>Pesquisar linha já utilizada:</p>
+    <input type="text" id="input_pesquisa">
+    <button onclick="pesquisarLinha();">Pesquisar</button>
+
+    <div id="screendiv"></div>
+    
+</body>
+</html>

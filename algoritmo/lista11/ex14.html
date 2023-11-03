@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex014</title>
+    <script>
+        var produtos = [];
+
+        function cadastrarProduto(){
+            var nome = input_nome.value;
+            var preco = Number(input_preco.value);
+            if(nome == ''|| preco == NaN){
+                alert(`falha no cadastro! alguns dados podem estar errados ou vazios!`)
+            }
+            else{
+                produtos.push(nome);
+                produtos.push(preco);
+            }
+        }
+
+
+        function relatorio(){
+            screendiv.innerHTML = `Total de produtos: ${produtos.length / 2}<br>`;
+            var numeroLista = 1;
+
+            for(var i = 0; i<= produtos.length - 2; i += 2){
+                screendiv.innerHTML += `
+                <br>
+                <b>Produto ${numeroLista}: ${produtos[i]}</b><br>
+                Preço de compra: R$${(produtos[i + 1]).toFixed(2)}. Vender por R$${(produtos[i + 1] * 1.25).toFixed(2)}
+                <br>
+                `;
+                numeroLista++
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Nome do produto: <input type="text" id="input_nome"></p>
+
+    <p>Preço de compra do produto: <input type="text" id="input_preco"></p>
+    
+    <button onclick="cadastrarProduto();">Cadastrar</button>
+    <br>
+
+    <br>
+    <button onclick="relatorio();">Relátorio de estoque</button>
+    <br>
+
+    <br>
+    <div id="screendiv"></div>
+</body>
+</html>

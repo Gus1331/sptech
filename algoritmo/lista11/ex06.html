@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex06</title>
+    <script>
+        var filmes = [];
+
+        function cadastrarFilme(){
+            filmes.push(input_filmes.value);
+            screendiv.innerHTML = ``;
+
+            for(var i = 0; i < filmes.length; i++){
+                screendiv.innerHTML += `${i + 1} - ${filmes[i]}<br>`
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Filmes que gosta:</p>
+    <input type="text" id="input_filmes">
+    <br>
+
+    <button onclick="cadastrarFilme();">Cadastrar</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+</html>

@@ -8,10 +8,12 @@
     <script>
         var estoqueAgua = 0;
         var estoqueFrutaCoco = 0;
+        var agua;
+        var frutaCoco;
         
         function validarValores() {
-            var agua = Number(input_agua.value);
-            var frutaCoco = Number(input_fruta_coco.value);
+            agua = Number(input_agua.value);
+            frutaCoco = Number(input_fruta_coco.value);
             screendiv.innerHTML = ``;
 
             if (agua < 100) {
@@ -68,18 +70,18 @@
         
         function encerrarTurno(){
             screendiv.innerHTML = `<h2>Vendas de Água engarrafada</h2>
-                Saldo de produto no estoque: XXXX 
+                Saldo de produto no estoque: ${estoqueAgua} <br>
 
-                Quantidade de vendas: YYYY
+                Quantidade de vendas: ${agua - estoqueAgua} <br>
 
-                Porcentagem das vendas: ZZZZ
+                Porcentagem das vendas: ${(100 / agua) * (agua - estoqueAgua)}% <br>
 
                 <h2>Vendas de Coco fechado</h2>
-                Saldo de produto no estoque: XXXX 
+                Saldo de produto no estoque: ${estoqueFrutaCoco} <br>
 
-                Quantidade de vendas: YYYY
+                Quantidade de vendas: ${frutaCoco + estoqueFrutaCoco} <br>
 
-                Porcentagem das vendas: ZZZZ
+                Porcentagem das vendas: ${(100 / frutaCoco) * (frutaCoco - estoqueFrutaCoco)}% <br>
             `;
         }
     </script>

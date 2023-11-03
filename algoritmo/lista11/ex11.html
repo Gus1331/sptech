@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex11</title>
+    <script>
+        var precos = [];
+        function cadastrar(){
+            precos.push(input_preco.value);
+        }
+        function atualizarEstoque(){
+            var total = 0
+            for(var i = 0; i <= (precos.length - 1); i++){
+                total += Number(precos[i])
+            }
+
+            screendiv.innerHTML = `
+            Você tem ${precos.length} produtos cadastrados em estoque <br>
+            Seu estoque vale R${total}
+            `;
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Preço de um produto:</p>
+    <input type="text" id="input_preco">
+    <button onclick="cadastrar();">Cadastrar</button>
+    <br>
+    
+    <br>
+    <button onclick="atualizarEstoque();">Atualizar Estoque</button>
+    <br>
+
+    <br>
+    <div id="screendiv"></div>
+</body>
+</html>

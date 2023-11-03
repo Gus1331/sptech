@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ex01</title>
+    <title>ex04</title>
+    <script>
+        var filmes = [undefined];
+        function cadastrarFilme() {
+            filmes.push(input_filme.value);
+            screendiv.innerHTML = `Seu filme favorito: ${filmes[1]} <br>`;
+
+            screendiv.innerHTML += `Seu 3º filme favorito:`;
+            if (filmes[3] == undefined) {
+                screendiv.innerHTML += `Ainda não existe<br>`;
+            }
+            else {
+                screendiv.innerHTML += ` ${filmes[3]} <br>`;
+
+            }
+
+
+            screendiv.innerHTML += `Total de filmes cadastrados: ${filmes.length - 1}`;
+
+        }
+
+    </script>
 </head>
+
 <body>
     <a href="index.html">Voltar</a>
     <hr>
+
+    <p>Cadastrar filme favorito:</p>
+    <input type="text" id="input_filme">
+    <br>
+
+    <br>
+    <button onclick="cadastrarFilme();">Cadastrar Filme</button>
+    <br>
+
+    <div id="screendiv"></div>
 </body>
+
 </html>

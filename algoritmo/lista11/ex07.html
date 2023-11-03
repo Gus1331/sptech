@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex07</title>
+    <script>
+        var filmes = [];
+
+        function cadastrarFilme(){
+            filmes.push(input_filmes.value);
+            screendiv.innerHTML = ``;
+            
+            for(var i = 0; i < filmes.length; i++){
+                var color = "red";
+                screendiv.innerHTML += ``;
+                if((i % 2) == 0){
+                    color = "blue";
+                }
+
+                screendiv.innerHTML += `${i + 1} - <span style="color: ${color};"> ${filmes[i]} <span><br>`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Filmes que gosta:</p>
+    <input type="text" id="input_filmes">
+    <br>
+
+    <button onclick="cadastrarFilme();">Cadastrar</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+</html>

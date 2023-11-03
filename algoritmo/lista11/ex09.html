@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex09</title>
+    <script>
+        var projetos = [];
+
+        function registrarProjeto(){
+            projetos.push(input_projeto.value);
+            var nProjetos = projetos.length;
+            var nivel;
+
+            if(nProjetos <= 4){
+                nivel = "Júnior";
+            }
+            else if (nProjetos <= 12){
+                nivel = "Pleno";
+            }
+            else{
+                nivel = "Sênior";
+            }
+
+            screendiv.innerHTML = `Você já fez <b>${nProjetos}</b> projetos. Por isso você é um profissional <b>${nivel}</b> `;
+        }
+
+        function mostrarProjetos(){
+            screendiv.innerHTML = ``; 
+            for(var i = 0; i < projetos.length; i++){
+                screendiv.innerHTML += `${projetos[i]}<br>`; 
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <p>Nome dos projetos que já trabalhou:</p>
+    <input type="text" id="input_projeto">
+    <br>
+
+    <button onclick="registrarProjeto();">Registrar projeto</button>
+    <button onclick="mostrarProjetos();">Mostrar projetos</button>
+    <br>
+
+    <div id="screendiv"></div>
+    
+</body>
+</html>
