@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math.random</title>
+    <script>
+        function gerarAleatorio(){
+            var aleatorio = parseInt(Math.random() * 10);
+            
+            while (aleatorio < 1 || aleatorio > 6){
+                var aleatorio = parseInt(Math.random() * 10);
+            }
+
+            // var aleatorio = parseInt(Math.random() * 6) + 1
+            // random * 6 = define um numero de 0 a 5
+            // () + 1 = define o numero minimo a 1 e possibilita o numero maximo de ser 6
+
+
+            screendiv.innerHTML = aleatorio;
+        }
+    </script>
+</head>
+<body>
+    <h1>Math.random() e parseInt();</h1>
+    <hr>
+
+    <div id="screendiv"></div>
+    <button onclick="gerarAleatorio();">Gerar Numero aleatorio</button>
+</body>
+</html>

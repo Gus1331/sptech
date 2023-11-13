@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04</title>
+    <script>
+        function sortearNota(){
+            var nota = Math.random() * 10
+
+            screendiv.innerHTML = nota.toFixed(1)
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+    <button onclick="sortearNota();">Sortear Nota para aluno</button>
+    
+    <br>
+    <div id="screendiv"></div>
+</body>
+</html>

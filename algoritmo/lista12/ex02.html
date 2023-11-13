@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02</title>
+    <script>
+        function sortearTime(){
+            var times = ['Time A', 'Time B', 'Time C', 'Time D'];
+            var random = parseInt(Math.random() * times.length)
+
+            screendiv.innerHTML = `(logo 150px height) ${times[random]}`;
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <button onclick="sortearTime();">Sortear time</button>
+
+    <div id="screendiv"></div>
+</body>
+</html>

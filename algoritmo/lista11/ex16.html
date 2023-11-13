@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex16</title>
+    <script>
+        var listaNumerica = [];
+
+        function analisarHistorico() {
+            var numero = Number(input_numero.value);
+            screendiv.innerHTML = ``;
+            
+            if (numero != NaN || input_numero.value == "") {
+                listaNumerica.push();
+            }
+            var maior = listaNumerica[0];
+            var menor = listaNumerica[0];
+            
+            for (var i = 0; i < listaNumerica.length; i++){
+                screendiv.innerHTML += `${i + 1}º Número: ${listaNumerica[i]} <br>`;
+                
+                if (listaNumerica[i] > maior){
+                    maior = listaNumerica[i];
+                }
+                
+                if(listaNumerica[i] < menor){
+                    menor = listaNumerica[i];
+                }
+            }
+
+            screendiv.innerHTML = `Maior: ${maior}<br>Menor: ${menor}`;
+
+        }
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Voltar</a>
+    <br>
+
+    <p>Digite um número qualquer:
+        <input type="text" id="input_numero">
+    </p>
+    <button onclick="analisarHistorico();">Analisar histórico</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+
+</html>

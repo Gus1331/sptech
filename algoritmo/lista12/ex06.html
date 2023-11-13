@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex06</title>
+    <script>
+        function sortearMomento(){
+            var momento = parseInt(Math.random() * 24)
+
+            if (momento <= 11){
+                screendiv.innerHTML = `Bom dia, flor do dia, são ${momento}h!`;
+            }
+            else if(momento <= 17){
+                screendiv.innerHTML = `Boa tarde, já vai tarde! São ${momento}h!`;
+            }
+            else if(momento <= 23){
+                screendiv.innerHTML = `Boa noite, durma bem! São ${momento}h!`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+    <button onclick="sortearMomento();">Sortear momento do Dia</button>
+    <br>
+
+    <div id="screendiv"></div>
+</body>
+</html>

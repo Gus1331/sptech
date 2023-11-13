@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex01</title>
+    <script>
+        function sortear(){
+            var random = Math.random().toFixed(4);
+            screendiv.innerHTML = `${random} <br>`;
+            
+            if (random > 0.5){
+                screendiv.innerHTML += `Eu arredondaria para 1`;
+            }
+            else{
+                screendiv.innerHTML += `Eu arredondaria para 0`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+    <button onclick="sortear();">Sortear</button>
+    <br>
+    <div id="screendiv"></div>
+</body>
+</html>

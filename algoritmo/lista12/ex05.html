@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex05</title>
+    <style>
+        #screendiv>img{
+            width: 200px;
+        }
+    </style>
+    <script>
+        function jogar(){
+            var random = parseInt(Math.random() * 3) + 1
+            var opcao = ``;
+            screendiv.innerHTML = ``;
+
+            if (random == 1){
+                opcao = `pedra`;
+            }
+            else if(random == 2){
+                opcao = `papel`
+            }
+            else if (random == 3){
+                opcao = `tesoura`
+            }
+
+            screendiv.innerHTML = `<img src="https://www.playclick.com.br/jogo_jokenpo/img/${opcao}.png" alt="${opcao}">`;
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Voltar</a>
+    <hr>
+
+    <button onclick="jogar();">Jogar</button>
+    <br>
+
+    <div id="screendiv">
+    </div>
+</body>
+</html>

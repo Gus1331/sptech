@@ -132,8 +132,43 @@ SELECT * FROM cliente LEFT JOIN cliente AS indicador ON cliente.indicacao = indi
     JOIN produto
     ON fkProduto = idProduto;
     
+    -- n ->
+    SELECT * FROM cliente;
+    
  SELECT	produto.nome AS 'Produto',
-    sum(produto.preco) AS 'Total', count(*)
+	produto.preco as 'Preço base',
+    COUNT(*) 'Quantidade vendido',
+    sum(produto.preco) AS 'Total'
 	FROM vendaProduto
     JOIN produto ON fkProduto = idProduto
-    GROUP BY produto.nome;
+    GROUP BY produto.nome, produto.preco;
+    
+INSERT INTO cliente(nome, endereco, indicacao) VALUES
+	('Sofia', 'rua jurtes', 2);
+        
+SELECT *
+	FROM cliente
+    LEFT JOIN venda ON fkCliente = idCliente;
+    
+SELECT MAX(preco) 'Mais caro',
+	MIN(preco) 'Mais barato'
+    FROM produto;
+ SELECT 'Mais caro' definicao, nome, preco FROM produto
+	WHERE preco IN (SELECT MAX(preco) FROM produto)
+	UNION ALL
+	SELECT 'Mais Barato' , nome, preco FROM produto
+	WHERE preco IN (SELECT MIN(preco) FROM produto);
+    
+SELECT COUNT(*) qtd, AVG(preco) media FROM produto;
+
+SELECT COUNT(*) 'Quantidade de produtos acima da média' FROM produto
+	WHERE preco > (SELECT AVG(preco) FROM produto);
+    
+    SELECT * FROM vendaProduto;
+UPDATE produto SET preco = 8.99 WHERE idProduto = 503;
+SELECT SUM(DISTINCT preco) FROM produto;
+SELECT SUM(preco) FROM produto;
+
+SELECT fkVenda, SUM(preco) FROM vendaProduto
+	JOIN produto ON fkProduto = idProduto
+	GROUP BY fkVenda;
