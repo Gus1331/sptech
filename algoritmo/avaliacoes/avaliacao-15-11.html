@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de estoque</title>
+    <script>
+        var nomeProduto = [];
+        var codigoProduto = [];
+        var qtdEstoqueProduto = [];
+        var precoProduto = [];
+
+        function salvarProduto(){
+            var codigo = ``;
+            codigo += input_codigo.value.replaceAll(" ", "");
+            var nome = input_nome.value;
+            var qtdEstoqte = Number(input_qtd_estoque.value);
+
+
+            if(codigo == ""){
+                alert(`Código inválido para o produto`);
+            }
+            else if (nome.replaceAll(" ", "") == ""){
+                alert(`Nome inválido para o produto`);
+            }  
+            else if (qtdEstoqte == NaN || qtdEstoqte <= 0){
+                alert(`Quantidade inválida para o produto`);
+            } 
+            else{
+
+
+
+                for(var i = 0; i <= codigoProduto.length - 1 || codigoProduto.length == 0; i++){
+
+                    if(codigo == codigoProduto[i]){
+                        qtdEstoqueProduto[i] += qtdEstoqte;
+                        alert(`O produto de código ${codigo} teve sua quantidade aumentada`);
+                        break;
+                    }
+
+                    if (i == codigoProduto.length - 1 || codigoProduto.length == 0){
+                        codigoProduto.push(codigo);
+                        nomeProduto.push(nome);
+                        qtdEstoqueProduto.push(qtdEstoqte);
+                        precoProduto.push(parseInt(Math.random() * 1000));
+
+                        alert(`Produto cadastrado com sucesso`);
+                        break;
+                    }
+                }
+
+            }
+        }
+
+        function mostrarEstoque(){
+            for(var i = 0; i <= codigoProduto.length - 1; i++){
+                screendiv.innerHTML += `Código: ${codigoProduto[i]}<br>
+                Nome: ${nomeProduto[i]} <br>
+                Quantidade; ${qtdEstoqueProduto[i]}<br>
+                Preço: ${precoProduto[i]}<br><br>`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Controle de estoque têxtil</h1>
+    <hr>
+    <p>Código do produto:
+        <input type="text" id="input_codigo">
+    </p>
+    <p>Nome do produto:
+        <input type="text" id="input_nome">
+    </p>
+    <p>Quantidade em estoque:
+        <input type="text" id="input_qtd_estoque">
+    </p>
+
+    <button onclick="salvarProduto();">Salvar produto</button>
+    <button onclick="mostrarEstoque();">Ver estoque</button>
+
+    <div id="screendiv"></div>
+</body>
+</html>

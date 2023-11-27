@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuada 3</title>
+    <style>
+        body {
+            display: flex;
+            align-items: stretch;
+        }
+
+        body div:first-child,
+        body div:nth-of-type(2) {
+            padding: 8px;
+            border: 2px solid rgba(0, 0, 0, 0.2);
+        }
+
+        body div:nth-of-type(2) {
+            flex-grow: 1;
+        }
+    </style>
+    <script>
+        var partida = 0; // contabiliza cada rodada feita ao clique (passando pelas validações); unico jeito de recomeçar é atualizando a página
+
+        // histórico de pontuação dos jogadores
+        var jogador1 = [];
+        var jogador2 = [];
+
+
+        function realizar_partida() {
+            var qtdPartidas = Number(input_qtd_partidas.value);
+
+            if (qtdPartidas < 0) { // para caso de partidas máximas negativas
+                alert(`Número de partidas inválido`);
+            }
+            else {
+                if (partida >= qtdPartidas) { // para caso já tenha ocorrido todas partidas
+                    alert(`Número de partidas excedido`);
+                }
+                else {
+                    div_painel.innerHTML = ``;
+
+                    //partida atual
+                    partida++;
+
+                    // colocando dentro das arrays, os valores randomicos
+                    jogador1.push(parseInt(Math.random() * 10));
+                    jogador2.push(parseInt(Math.random() * 10));
+
+
+                    var total1 = 0;
+                    var total2 = 0;
+                    for (var rodada = 0; rodada < jogador1.length; rodada++) { // jogador.lenght contabiliza o numero de pontuações do jogador, logo, a quantidade de rodadas que teve.
+
+                        // incrementar total item por item ao ser mostrado
+                        total1 += jogador1[rodada];
+                        total2 += jogador2[rodada];
+
+                        // mostrar total atual; rodada; pontos desta rodada;
+                        div_painel.innerHTML += `
+                            Rodada: ${rodada + 1}<br>
+                            Jogador 1: ${jogador1[rodada]}<br>
+                            Jogador 2: ${jogador2[rodada]}<br>
+                            Total do jogador 1: ${total1}<br>
+                            Total do jogador 2: ${total2}<br>
+                            <br>
+                            `;
+                    }
+                }
+            }
+        }
+
+        function relembrar_partidas() {
+            var inicioIntervalo = Number(input_inicio_intervalo.value);
+            var fimIntervalo = Number(input_fim_intervalo.value);
+            div_painel.innerHTML = ``;
+
+
+            var total1 = 0;
+            var total2 = 0;
+            for (var rodada = (inicioIntervalo - 1); rodada < fimIntervalo; rodada++) {
+                // inicio do intervalo é subtraido um pela diferença entre rodada e posição no vetor
+                // fim do intervalo não necessita ser subtraido desde que o for valida apenas enquanto o numero for menor, e não igual
+
+                total1 += jogador1[rodada];
+                total2 += jogador2[rodada];
+
+                div_painel.innerHTML += `
+                            Rodada: ${rodada + 1}<br>
+                            Jogador 1: ${jogador1[rodada]}<br>
+                            Jogador 2: ${jogador2[rodada]}<br>
+                            Total do jogador 1: ${total1}<br>
+                            Total do jogador 2: ${total2}<br>
+                            <br>
+                            `;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <label for="input_qtd_partidas">
+            Rodadas máximas:
+            <input id="input_qtd_partidas" /><br />
+        </label>
+
+        <button onclick="realizar_partida()">Realizar partida</button>
+
+        <h3>Informe as partidas que deseja relembrar</h3>
+
+        <label for="input_inicio_intervalo">Início:</label>
+        <input id="input_inicio_intervalo" />
+        <label for="input_fim_intervalo">Fim:</label>
+        <input id="input_fim_intervalo" />
+
+        <button onclick="relembrar_partidas()">Relembrar</button>
+    </div>
+    <div>
+        <h3>Painel</h3>
+        <div id="div_painel"></div>
+    </div>
+</body>
+
+</html>

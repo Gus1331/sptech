@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interestelar</title>
+    <script>
+        var viagens = []
+
+        function registrarViagem() {
+            var nome = input_nome.value;
+            var dias = Number(input_qtd_dias.value);
+            var horas = Number(input_qtd_horas.value);
+            var minutos = Number(input_qtd_minutos.value);
+
+
+            if (nome.length < 3 || dias < 0 || horas < 0 || minutos < 0) {
+                alert("Nome minimo com 3 caracteres / Informe um tempo de viagem válido!");
+            }
+            else {
+                viagens.push(nome, dias, horas, minutos);
+            }
+        }
+        
+        function relatorioViagens() {
+            screendiv.innerHTML = ``;
+            let idViagem = 1
+
+            for (let i = 0; i < viagens.length; i += 4) {
+                let tempoMinutos = 0; //tempo na terra
+                let img;
+                let txt;
+        
+                tempoMinutos += viagens[i + 1] * 1440;
+                tempoMinutos += viagens[i + 2] * 60;
+                tempoMinutos += viagens[i + 3];
+                tempoMinutos *= 49 //tempo fora
+                let tempoAnos = tempoMinutos / 526000;
+
+                if(tempoAnos <= 13){
+                    img = 1;
+                    txt = `Bart criança`;
+                }
+                else if (tempoAnos <= 30){
+                    img = 2;
+                    txt = `Bart Adulto`;
+                }
+                else if (tempoAnos <= 65){
+                    img = 3;
+                    txt = `Bart Velho`;
+                }
+                else if (tempoAnos <= 100){
+                    img = 4;
+                    txt = `Bart Idoso`;    
+                }
+                else{
+                    img = 5;
+                    txt = `Bart Caveira`;
+                }
+
+
+
+                screendiv.innerHTML += `Viagem: ${idViagem}`;
+                screendiv.innerHTML += `<h2>Nome: ${viagens[i]}</h2>`;
+                screendiv.innerHTML += `Dias: ${viagens[i + 1]}, `;
+                screendiv.innerHTML += `Horas: ${viagens[i + 2]}, `;
+                screendiv.innerHTML += `Minutos: ${viagens[i + 3]} <br>`;
+                screendiv.innerHTML += `Astronauta ${viagens[i]} ficou fora por pelo menos ${tempoAnos} anos no tempo da Terra.
+                A criança que nasceu quando ele saiu provavelmente está assim: <br>`;
+
+                screendiv.innerHTML += `<img src="imgs/estado0${img}.png" alt="${txt}">`;
+                screendiv.innerHTML += `<br>`;
+                idViagem++;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Calculo de tempo relativo</h1>
+    <hr>
+
+    <p>Nome do astronauta: <input type="text" id="input_nome"></p>
+    <p>Quantidade de dias: <input type="text" id="input_qtd_dias" value="0"></p>
+    <p>Quantidade de horas: <input type="text" id="input_qtd_horas" value="0"></p>
+    <p>Quantidade de minutos: <input type="text" id="input_qtd_minutos" value="0"></p>
+
+    <button onclick="registrarViagem()">Registrar viagem</button>
+    <button onclick="relatorioViagens();">Relatório de viagens</button>
+
+    <div id="screendiv"></div>
+</body>
+
+</html>

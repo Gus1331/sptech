@@ -164,7 +164,7 @@ SELECT COUNT(*) qtd, AVG(preco) media FROM produto;
 SELECT COUNT(*) 'Quantidade de produtos acima da média' FROM produto
 	WHERE preco > (SELECT AVG(preco) FROM produto);
     
-    SELECT * FROM vendaProduto;
+SELECT * FROM vendaProduto;
 UPDATE produto SET preco = 8.99 WHERE idProduto = 503;
 SELECT SUM(DISTINCT preco) FROM produto;
 SELECT SUM(preco) FROM produto;
