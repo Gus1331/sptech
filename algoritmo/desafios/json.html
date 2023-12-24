@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+    <script>
+        function exibirDados(){
+            var pessoa = {
+                nome: "Gus",
+                idade: 20,
+                dtNasc: 2003,
+                altura: 1.75,
+                endereco: {
+                    rua: "Haddock Lobo",
+                    numero: 595
+                }
+            }
+            var hoje = new Date().getFullYear();
+
+            pessoa['nome'] += " Souza";
+            pessoa.altura = 1.76;
+
+            console.log("Pessoa: ",pessoa);
+            console.log("Nome: ",pessoa.nome);
+            console.log("Idade: ",pessoa.idade);
+            console.log("Altura: ",pessoa.altura);
+            console.log("Endereco: ",pessoa.endereco);
+            console.log("Rua: ",pessoa.endereco.rua);
+            console.log("numero: ",pessoa.endereco.numero);
+    
+            screendiv.innerHTML = `Olá ${pessoa.nome} <br>
+            Sua altura é: ${pessoa.altura}<br>
+                Seu endereço é: ${pessoa.endereco.rua}, ${pessoa.endereco.numero} <br>
+                Sua idade é: ${hoje - pessoa.dtNasc}`;
+        }
+
+
+    </script>
+</head>
+<body>
+    <button onclick="exibirDados();">Exibir dados</button>    
+    <div id="screendiv"></div>
+</body>
+</html>
