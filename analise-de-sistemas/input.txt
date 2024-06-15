@@ -1,0 +1,57 @@
+Quem diretoria marquinhos
+
+O que controle de aceeso biometrico
+porque  para a segurança e monitoramento do prédio
+
+
+
+product backlog
+
+
+FUNCIONAIS
+
+Página de cadastro de digitais - essencial - médio
+Página de controle biométrico - essencial - grande
+Página de métricas ou dashboard - importante - grande
+Validação das digitais - essencial - médio
+Algoritmo de previsão de entradas e saidas - desejável - médio
+Bloqueio de atividades suspeitas - desejável - pequeno
+Alertas - desejável - pequeno
+Log alerta - desejável - pequeno
+
+NÃO FUNCIONAIS
+Modelagem BD - importante - pequeno
+Cadastro dos time de suporte - importante - médio
+inserção das tabelas BD - essencial - médio
+Conexão com BD - essencial - pequeno
+Verificação ser completada em menos de 10s - desejável - médio
+
+
+username gustavo souza
+pass 1331
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sistema biblioteca
+
+backlog
+
+cadastro
+login
+registro de emprestimo
+sistema de alerta
+plataforma de livros digitais
+banco de dados - não func
+criptografia 

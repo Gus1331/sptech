@@ -1,0 +1,28 @@
+Problemas
+
+ - Muita papelada
+ - Lentidão em tudo
+ - Incosistência de dados
+ - Segurança
+ - Espaço
+
+
+Soluções
+ 
+ - CRUD clientes
+ - Sistema interno
+ - BD
+ - Webapp de agendamento
+ - Criptografia dos dados
+ - Site institucional
+ - Página de login e cadastro
+ - 
+
+
+
+
+
+
+
+
+

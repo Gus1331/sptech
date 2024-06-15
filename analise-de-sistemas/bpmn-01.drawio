@@ -1,0 +1,160 @@
+<mxfile host="app.diagrams.net" modified="2024-04-11T23:41:17.942Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="hN-yLRMdLpthTCU7YlqJ" version="24.2.2" type="device">
+  <diagram name="Página-1" id="gU2xPshbsteaA3s3AzCK">
+    <mxGraphModel dx="1086" dy="558" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="GmlZrARqhWUZiwIW42ie-32" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="20" y="60" width="1170" height="630" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="GmlZrARqhWUZiwIW42ie-32">
+          <mxGeometry y="210" width="1170" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="GmlZrARqhWUZiwIW42ie-32">
+          <mxGeometry width="1170" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-4" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="GmlZrARqhWUZiwIW42ie-32">
+          <mxGeometry y="420" width="1170" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-20" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="GmlZrARqhWUZiwIW42ie-32">
+          <mxGeometry x="1066.09875" y="80" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-21" value="Conclui a solicitação de férias" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="GmlZrARqhWUZiwIW42ie-32">
+          <mxGeometry x="1060.005" y="40" width="73.125" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="GmlZrARqhWUZiwIW42ie-32" source="GmlZrARqhWUZiwIW42ie-31" target="GmlZrARqhWUZiwIW42ie-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="GmlZrARqhWUZiwIW42ie-32" source="GmlZrARqhWUZiwIW42ie-31" target="GmlZrARqhWUZiwIW42ie-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-31" value="" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="GmlZrARqhWUZiwIW42ie-32">
+          <mxGeometry x="630" y="500" width="42.19" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="GmlZrARqhWUZiwIW42ie-32" source="GmlZrARqhWUZiwIW42ie-34" target="GmlZrARqhWUZiwIW42ie-20">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1064.9987499999997" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-34" value="Aprova a solicitação de férias" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="GmlZrARqhWUZiwIW42ie-32">
+          <mxGeometry x="770" y="540" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-104" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="GmlZrARqhWUZiwIW42ie-32" source="GmlZrARqhWUZiwIW42ie-35" target="GmlZrARqhWUZiwIW42ie-20">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1039.9987499999997" y="525" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-35" value="Reprova a solicitação de férias" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="GmlZrARqhWUZiwIW42ie-32">
+          <mxGeometry x="770" y="440" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-38" value="Sim" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="GmlZrARqhWUZiwIW42ie-32">
+          <mxGeometry x="640" y="440" width="86" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-39" value="Não" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="GmlZrARqhWUZiwIW42ie-32">
+          <mxGeometry x="650" y="580" width="86" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="GmlZrARqhWUZiwIW42ie-32" source="GmlZrARqhWUZiwIW42ie-44" target="GmlZrARqhWUZiwIW42ie-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-44" value="Reprova a solitação de férias" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="GmlZrARqhWUZiwIW42ie-32">
+          <mxGeometry x="616" y="285" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-5" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="480" width="90" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-6" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="270" width="90" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-7" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="60" width="90" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-8" value="Gestor" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="35" y="570" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-9" value="RH" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="35" y="360" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-10" value="Funcionário" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="35" y="150" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="GmlZrARqhWUZiwIW42ie-11" target="GmlZrARqhWUZiwIW42ie-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-11" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="150" y="140" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-12" value="Abre uma solicitação de férias" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="145" y="100" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="GmlZrARqhWUZiwIW42ie-15" target="GmlZrARqhWUZiwIW42ie-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-15" value="Avaliar se o funcionário possui os requisitos para férias" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="145" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="GmlZrARqhWUZiwIW42ie-17" target="GmlZrARqhWUZiwIW42ie-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="GmlZrARqhWUZiwIW42ie-17" target="GmlZrARqhWUZiwIW42ie-44">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="345" y="300" />
+              <mxPoint x="696" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-17" value="" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="360" width="50" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="GmlZrARqhWUZiwIW42ie-19" target="GmlZrARqhWUZiwIW42ie-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-19" value="Encaminhar a solicitação para o gestor" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="352.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-23" value="Não possui" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="270" width="86" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-26" value="P&lt;span style=&quot;background-color: initial;&quot;&gt;ossui&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="374" y="350" width="86" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="GmlZrARqhWUZiwIW42ie-29" target="GmlZrARqhWUZiwIW42ie-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-29" value="Verificar se a integridade dos recursos do setor será comprometida pelas férias do funcionário" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="540" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-106" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="30" y="980" width="1170" height="630" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-107" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="GmlZrARqhWUZiwIW42ie-106">
+          <mxGeometry y="210" width="1170" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-108" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="GmlZrARqhWUZiwIW42ie-106">
+          <mxGeometry width="1170" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-109" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="GmlZrARqhWUZiwIW42ie-106">
+          <mxGeometry y="420" width="1170" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-123" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="GmlZrARqhWUZiwIW42ie-106">
+          <mxGeometry width="90" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-124" value="Analista" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;" vertex="1" parent="GmlZrARqhWUZiwIW42ie-106">
+          <mxGeometry x="15" y="90" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-125" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="GmlZrARqhWUZiwIW42ie-106">
+          <mxGeometry y="210" width="90" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-126" value="?" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;" vertex="1" parent="GmlZrARqhWUZiwIW42ie-106">
+          <mxGeometry x="15" y="300" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-127" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="GmlZrARqhWUZiwIW42ie-106">
+          <mxGeometry y="420" width="90" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="GmlZrARqhWUZiwIW42ie-128" value="??" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;" vertex="1" parent="GmlZrARqhWUZiwIW42ie-106">
+          <mxGeometry x="15" y="510" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
